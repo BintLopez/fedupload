@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food Donation</title>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'routedonations/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'routedonations/styles.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </head>
+<body>
+
+<div class="container-fluid">
+<span style="text-align:center;"><h1>Search for a Food Pantry to Accept Your Food Donation</h1></span>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'results' %}" method="post" role="form">
+{% csrf_token %}
+<table>
+	<TR valign="top">
+		<TD><h2>Your Name</h2>
+			<BR>
+			<input type="text" name="name" >
+	</tr>
+	<TR valign="top">
+		<TD><H2>Your Email</h2>
+			<BR>
+			<input type="text" name="email">
+	</tr>
+	<TR valign="top">
+		<TD><h2>What type of food do you have to donate?</h2>
+			<BR>
+			<table>
+				<TR>
+					<TD>Dry food: 
+					<TD><input type="text" name="dry_weight"> lbs.
+				</tr>
+				<TR>
+					<TD>Refrigerated Food: 
+					<TD><input type="text" name="refrig_weight"> lbs.
+				</tr>
+			</table>
+	</tr>
+	<TR valign="top">
+		<TD><h2>When will your food expire?</h2>
+			If there are multiple expiration dates, give the soonest expiration date.
+			<BR>
+			<input type="text" name="expiration_date" max_length="8">
+			<BR>Must use mm/dd/yy format.
+	</tr>
+	<TR valign="top">
+		<TD><h2>What delivery method do you want?</h2>
+		
+			<input type="radio" name="delivery_type" value="pickup"> Pick-Up<BR>
+			<input type="radio" name="delivery_type" value="dropoff"> Drop-off
+	</tr>
+
+</table>
+<BR/>
+<input type="submit" value="Search" class="btn btn-default" />
+</form>
+</div>
+<BR><BR>
+	
+</body>
+</html>

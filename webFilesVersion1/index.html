@@ -1,0 +1,148 @@
+<!-- {% load staticfiles %} -->
+
+<head>
+<title>Fed Up(load)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="stylesheets/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="stylesheets/css/pantry.css" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script> -->
+<!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="pantry.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href='http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]>
+    	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+    
+  <body>
+    <header>
+      <!-- <h1>Fed Up(load)</h1> -->
+      <img id="logo" src="images/FedUpload.png">
+      <nav>
+        <ul>
+          <li>
+            <a href="#donate">Donate</a>
+          </li>
+          <li>
+            <a href="#story">Story</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="callToAction">
+        <div class="wrapper" id="layoutFix">
+        <img id="backgroundPhoto" src="images/pears.jpg">​
+        <aside>Fed up with hunger?<br />Upload the solution.<br />It starts with U.</aside>
+        <!-- <div class=".arrow_box"></div> -->
+        </div>
+    </section>
+
+    <div id="mainContent">
+      <section id="pantryFinder">
+          <article>
+            <h3>Enter your zip code.</h3>
+            <form id="zipCode">
+              <input type="text">
+            </form>
+            <a class="button" href="">Up(load)</a>
+          </article>
+      </section>  
+
+      <section id="donate">
+        <a name="donate"></a>
+        <div class = "wrapper">
+          <div class = "form" class = "form1" style="display: none;">
+            <p id="Q1">Tell us about yourself. Are you an ... ?</p>
+            <ul id="A1">
+              <li>Individual</li>
+              <li>Restaurant</li>
+              <li>Grocer</li>
+              <li>Other</li>
+            </ul>
+          </div>
+          <div class = "form" class = "form2" style="display: block;">
+            <p id="Q2">What do you have to Up(load)?</p>
+            <ul id="A2">
+              <li>Food</li>
+              <li>Clothing</li>
+              <li>Household Goods</li>
+              <li>Suggested Items</li>
+            </ul>
+          </div>
+          <div class = "form" class = "form3" style="display: none;">
+            <p>.form3</p>
+          </div>
+          <div class = "form" class = "form4" style="display: none;">
+            <p>.form4</p>
+          </div>
+          <div class = "form" class = "form5" style="display: none;">
+            <p>.form5</p>
+          </div>
+          <div class = "form" class = "form6" style="display: none;">
+            <p>.form6</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="story">
+        <a name="story"></a>
+        <h2>Story</h2>
+        <div class = "wrapper">
+          <article>
+            <div class="textwrap">
+            <h3>Problem</h3>
+            <ol><li>Many people are hungry (842 million worlwide, 1 in 6 Americans go hungry (49 million Americans do not have dependable, consistent access to food; 807,000 are food insecure in Chicago)</li>
+            <li>Food pantries are understaffed and using 20th century technology</li>
+            <li>YET, there is still a large amount of food that is not redistributed</li></ol></div>
+          </article>
+          <article>
+            <div class="textwrap">
+            There are apps out there that to help people locate the nearest food pantry, but there's no application that gives you a donate FOOD now button. There ought to be a way for people to know not only where to give, but HOW. What's lacking are convenience and immediacy.
+            </div>
+          </article>
+          <article>
+            <div class="textwrap">
+            Conversely, pantries, soup kitchens, and shelters all have different needs, drop off times, storage capacity, and pick-up capacity. Fed Up(load) seeks to help these organizations streamline the food donation intake process, cutting multiple phone calls and emails down to one simple means of communication.
+            </div>
+          </article>
+      </div>
+      </section>
+
+      <section id="contact">
+        <a name="contact"></a>
+        <h2>Contact</h2>
+        <div class = "wrapper">
+          <p>Questions or concerns?</p>
+          <p>info@fedupload.com</p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <nav>
+        <ul>
+          <li>
+            <a href="#donate">Donate</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <a name="bottom"></a>
+  </body>
+
+<!-- {% if name %}
+	Programming by: {{name}}
+{% endif %}

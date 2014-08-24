@@ -1,0 +1,26 @@
+#formContainer {
+	width: 85%;
+	height: 600px;
+	background-color: rgba(237, 167, 92, .7);
+	border-radius: 10px;
+	margin: auto;
+	position: relative;
+	padding: 100px;
+}
+
+#start {
+	display: block;
+}
+
+.form {
+	margin: 0 auto;
+	display: none;
+}
+
+.form label {
+	display: block;
+}
+
+.form input {
+	display: inline-block;
+}

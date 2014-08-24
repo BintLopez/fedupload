@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Smart Intake Form</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/css/form.css">
+  <script type="text/javascript" src="http://teaching-materials.org/ajax/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="pantry.js"></script>
+ </head>
+ <body>
+
+<div id="formContainer">
+  <div class="form" id="start">
+    <form>
+      <ol>
+        <li>
+          <label id="donorType">Tell us about yourself. Are you an... ?</label>
+          <input class="donorType" type="radio" value="individual">Individual</input>
+          <input class="donorType" type="radio" value="restaurant">Restaurant</input>
+          <input class="donorType" type="radio" value="grocer">Grocer</input>
+          <input class="donorType" type="radio" value="other">Other</input>
+        </li>
+        <li>
+          <label id="Q2">What are you donating?</label>
+          <input class="donationType" type="checkbox" value="food">Food</input>
+          <input class="donationType" type="checkbox" value="clothing">Clothing</input>
+          <input class="donationType" type="checkbox" value="householdItems">Household Items</input>
+          <input class="donationType" type="checkbox" value="other">Other</input>
+        </li>
+      </ol>
+    </form>
+  </div>
+  <div class="form" id="disclaimer">
+    <div id="cantList"><h3>Food that is expired</h3>
+      <ul>
+        <li>Food containers that are opened</li>
+        <li>Cribs, strollers, playpens, car seats and other infant equipment</li>
+        <li>Furniture</li>
+        <li>Luggage</li>
+        <li>Vitamins</li>
+        <li>Medication – both prescription and over the counter</li>
+        <li>Non-standard infant formula -  including prescription-only, premature infants, lactose free, and added rice formulas</li>
+        <li>Stuffed animals</li>
+      </ul>
+    </div>
+    <form>
+      <input type="checkbox" value="promise">I promise that I am not donating any of the items listed above.</input>
+    </form>
+  </div>
+  <div class="form" id="isFood">
+    <form>
+      <ol>
+        <li>
+          <label id="perishable">Are any of the food items perishable?</label>
+          <input type="radio" value="yes">Yes</input>
+          <input type="radio" value="no">No</input>
+        </li>
+        <li>
+          <label id="refrigeration">Does it need to be refrigerated?</label>
+          <input type="radio" value="yes">Yes</input>
+          <input type="radio" value="no">No</input>
+        </li>
+        <li>
+          <label id="foodtypes">What types of food do you have to donate?</label>
+          <input type="checkbox" value="grains">Grains</input>
+          <input type="checkbox" value="cannedFruitsVeggies">Canned Fruits/Veggies</input>
+          <input type="checkbox" value="freshFruitsVeggies">Fresh Fruits/Veggies</input>
+          <input type="checkbox" value="frozenFoods">Frozen Foods</input>
+          <input type="checkbox" value="beans">Beans</input>
+        </li>
+      </ol>
+    </form>
+  </div>
+  <div class="form" id="isClothing">
+    <form>
+      <ul>
+        <li>
+          <label id="clothingType">What type of clothing?</label>
+          <input type="checkbox" value="women">Women's</input>
+          <input type="checkbox" value="men">Men's</input>
+          <input type="checkbox" value="children">Children's</input>
+          <input type="checkbox" value="shoes">Shoes</input>
+          <input type="checkbox" value="business">Business Attire</input>
+          <input type="checkbox" value="winter">Winter Clothing</input>
+          <input type="checkbox" value="summer">Summer Clothing</input>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="form" id="isOther">
+    <form>
+      <ul>
+        <li>
+          <label id="defineOther">What would you like to donate?</label>
+          <input type="text"></input>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="form" id="end">
+    <form>
+      <ul>
+        <li>
+          <label id="name">What's your name?</label>
+          <input type="text"></input>
+        </li>
+        <li>
+          <label id="email">What's your email address?</label>
+          <input type="text"></input>
+        </li>
+        <li>
+          <label id="phoneNum">What's your phone number?</label>
+          <input type="text"></input>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="results" id="success">
+    <form>
+      <p>SUCCESS result message</p>
+    </form>
+  </div>
+  <div class="results" id="fail">
+    <form>
+      <p>FAILURE result message</p>
+    </form>
+  </div>
+</div>
+
+ </body>
+</html>
