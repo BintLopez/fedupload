@@ -1,13 +1,11 @@
 #formContainer {
-	width: 85%;
-	height: 600px;
+	width: 75%;
 	background-color: rgba(237, 167, 92, .7);
 	border-radius: 10px;
-	margin: auto;
-	position: relative;
-	padding: 100px;
+	margin: 0 auto;
+	padding: 30px;
 }
-
+/*
 #start {
 	display: block;
 }
@@ -23,4 +21,4 @@
 
 .form input {
 	display: inline-block;
-}
+}*/

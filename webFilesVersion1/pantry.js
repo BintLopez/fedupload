@@ -19,20 +19,43 @@ var formPages = [startPage, disclaimer, isFood, isClothing, isOther, formEnd, re
 
 
 //FORM DISPLAY
+
+//INITIALIZES THE FORM - MAKES IT SO THAT START PAGE IS ONLY ONE VISIBLE
 function formStart(formPages, currentPage) {
 	for (i=0; i<formPages.length; i++) {
-		var currentPage = startPage;
-		//currentPage = true;
 		formPages[i].css('display','none');
-		currentPage.css('display', 'block');
-		return currentPage;
+	var displayPage = currentPage;
+	displayPage.css('display', 'block');
 	};
 };
 
+formStart(formPages, startPage);
+
+//THIS DOES NOT WORK
+//BUT TRYING TO MAKE A CHECKER TO DETECT WHICH PAGE IS CURRENTLY VISIBLE
+// function isVisible(formPages) {
+// 	var isVisible = false;
+// 	for (i=0; i<formPages.length; i++) {
+// 		if (formPages[i].style.display = "block") {
+// 			isVisible = true;
+// 			console.log(formPages[i]);
+// 		}
+// 	}
+// }
+
+//isVisible(formPages);
+
+
+//RIGHT NOW THIS WORKS BUT ONLY IN LIMITED CAPACITY 
+//after startForm function is called, switchForm works only if the currentPage...
+//...argument is passed var startPage
 function switchForm(currentPage, nextPage) {
   currentPage.css('display','none');
   nextPage.css('display','block');
 };
+
+//switchForm(startPage, disclaimer);
+
 
 //incomplete
 function formStartSubmit() {
@@ -43,14 +66,12 @@ function formStartSubmit() {
   //if (donorType === 'individual')
 };
 
-formStart(formPages, startPage);
-switchForm(currentPage, disclaimer);
+
+
+
+
+
 });
 
 
-//VIEW
-
-//CONTROLLER
-
-//switchForm(formStart, disclaimer);
 
