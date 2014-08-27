@@ -7,8 +7,12 @@ body {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.2em;
-  margin: 0px auto;
+  margin: $centered;
   width: 100%;
+}
+
+section {
+	display: block;
 }
 
 p {
@@ -260,7 +264,7 @@ div.wrapper div.form {
   float: left;
   width: 85%;
   margin: 0 auto;
-  background-color: red;
+//  background-color: $COLORTEST
   }
   h2 {
   text-shadow: 1px 1px 2px #009D92;
@@ -300,7 +304,7 @@ div.wrapper div.form {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color: red;
+//  background-color: $COLORTEST;
   width: 400px;
     article {
     margin: 0 auto;

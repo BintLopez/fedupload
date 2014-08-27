@@ -1,24 +1,12 @@
-//   $.ajax({type: "GET",
-//     url: "pantries.json",
-//     dataType: "json",
-//     success: function(pantries, e, f) {
-//         for (var i = 0; i < pantries.length; i++) {
-//           var video = videos[i];
-//           addVideoToList(video);
-//         }
-//       },
-//     error: function(pantries, b, t) {
-//       console.log(t);
-//       }
-//   });
-// });
-
-//form ids = #start, #disclaimer, #isFood, #isClothing, #isOther, #end
-
+//could set background img w/ js?
+//document.body.style.backgroundImage="url('image.jpg')";
 
 $(document).ready(function() {
 
-var formStart = $('#start');
+//IDEA--make all questions into objects
+
+
+var startPage = $('#start');
 var disclaimer = $('#disclaimer');
 var isFood = $('#isFood');
 var isClothing = $('#isClothing');
@@ -27,10 +15,24 @@ var formEnd = $('#end');
 var resultSuccess = $('#success');
 var resultFail = $('#fail');
 
+var formPages = [startPage, disclaimer, isFood, isClothing, isOther, formEnd, resultSuccess, resultFail];
+
+
+//FORM DISPLAY
+function formStart(formPages, currentPage) {
+	for (i=0; i<formPages.length; i++) {
+		var currentPage = startPage;
+		//currentPage = true;
+		formPages[i].css('display','none');
+		currentPage.css('display', 'block');
+		return currentPage;
+	};
+};
+
 function switchForm(currentPage, nextPage) {
   currentPage.css('display','none');
   nextPage.css('display','block');
-}
+};
 
 //incomplete
 function formStartSubmit() {
@@ -38,9 +40,17 @@ function formStartSubmit() {
   console.log(donorType);
   var donationType = $('.donationType').val;
   console.log(donationType);
-  if (donorType === 'individual')
-}
+  //if (donorType === 'individual')
+};
+
+formStart(formPages, startPage);
+switchForm(currentPage, disclaimer);
+});
+
+
+//VIEW
+
+//CONTROLLER
 
 //switchForm(formStart, disclaimer);
 
-});
