@@ -18,16 +18,6 @@ var resultFail = $('#fail');
 var formPages = [startPage, disclaimer, isFood, isClothing, isOther, formEnd, resultSuccess, resultFail];
  
 
-//ORDER MODEL TEMPLATE
-
-function VideoModel(videoJSON) {
-  this.youtubeId = videoJSON.youtubeId;
-  this.title     = videoJSON.title || 'Untitled';
-  this.author    = videoJSON.author || 'No author';
-  this.thumbURL  = 'http://i3.ytimg.com/vi/' + this.youtubeId + '/default.jpg';
-  this.embedURL  = 'http://www.youtube.com/embed/' + this.youtubeId;
-}
-
 
 //FORM DISPLAY
 
