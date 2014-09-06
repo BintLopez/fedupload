@@ -87,6 +87,11 @@ body {
 
 section {
   display: block; }
+  section:after {
+    /* clearfix hack */
+    content: "";
+    display: table;
+    clear: both; }
 
 p {
   margin: 1em; }

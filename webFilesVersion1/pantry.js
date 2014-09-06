@@ -16,20 +16,34 @@ var resultSuccess = $('#success');
 var resultFail = $('#fail');
 
 var formPages = [startPage, disclaimer, isFood, isClothing, isOther, formEnd, resultSuccess, resultFail];
+ 
+
+//ORDER MODEL TEMPLATE
+
+function VideoModel(videoJSON) {
+  this.youtubeId = videoJSON.youtubeId;
+  this.title     = videoJSON.title || 'Untitled';
+  this.author    = videoJSON.author || 'No author';
+  this.thumbURL  = 'http://i3.ytimg.com/vi/' + this.youtubeId + '/default.jpg';
+  this.embedURL  = 'http://www.youtube.com/embed/' + this.youtubeId;
+}
 
 
 //FORM DISPLAY
 
 //INITIALIZES THE FORM - MAKES IT SO THAT START PAGE IS ONLY ONE VISIBLE
-function formStart(formPages, currentPage) {
+function makeVisible(formPages, visiblePage) {
 	for (i=0; i<formPages.length; i++) {
 		formPages[i].css('display','none');
-	var displayPage = currentPage;
+	var displayPage = visiblePage;
 	displayPage.css('display', 'block');
 	};
 };
 
-formStart(formPages, startPage);
+
+makeVisible(formPages, disclaimer);
+makeVisible(formPages, startPage);
+
 
 //THIS DOES NOT WORK
 //BUT TRYING TO MAKE A CHECKER TO DETECT WHICH PAGE IS CURRENTLY VISIBLE
@@ -49,12 +63,13 @@ formStart(formPages, startPage);
 //RIGHT NOW THIS WORKS BUT ONLY IN LIMITED CAPACITY 
 //after startForm function is called, switchForm works only if the currentPage...
 //...argument is passed var startPage
-function switchForm(currentPage, nextPage) {
-  currentPage.css('display','none');
-  nextPage.css('display','block');
-};
+// function switchForm(currentPage, nextPage) {
+//   currentPage.css('display','none');
+//   nextPage.css('display','block');
+// };
 
-//switchForm(startPage, disclaimer);
+// switchForm(disclaimer, startPage);
+// switchForm(startPage, isClothing);
 
 
 //incomplete
