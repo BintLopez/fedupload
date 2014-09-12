@@ -12,22 +12,18 @@
 <div id="formContainer">
   <div class="form" id="start">
     <form>
-      <ol>
-        <li>
           <label id="donorType">Tell us about yourself. Are you an... ?</label>
-          <input class="donorType" type="radio" value="individual">Individual</input>
-          <input class="donorType" type="radio" value="restaurant">Restaurant</input>
-          <input class="donorType" type="radio" value="grocer">Grocer</input>
-          <input class="donorType" type="radio" value="other">Other</input>
-        </li>
-        <li>
+          <input class="donorType" type="radio" name="donorType" value="individual">Individual</input>
+          <input class="donorType" type="radio" name="donorType" value="restaurant">Restaurant</input>
+          <input class="donorType" type="radio" name="donorType" value="grocer">Grocer</input>
+          <input class="donorType" type="radio" name="donorType" value="other">Other</input>
+    </form>
+    <form> 
           <label id="Q2">What are you donating?</label>
           <input class="donationType" type="checkbox" value="food">Food</input>
           <input class="donationType" type="checkbox" value="clothing">Clothing</input>
           <input class="donationType" type="checkbox" value="householdItems">Household Items</input>
-          <input class="donationType" type="checkbox" value="other">Other</input>
-        </li>
-      </ol>
+          <input class="donationType" type="checkbox" value="other">Other</input> 
     </form>
   </div>
   <div class="form" id="disclaimer">
@@ -49,32 +45,26 @@
   </div>
   <div class="form" id="isFood">
     <form>
-      <ol>
-        <li>
           <label id="perishable">Are any of the food items perishable?</label>
-          <input type="radio" value="yes">Yes</input>
-          <input type="radio" value="no">No</input>
-        </li>
-        <li>
+          <input type="radio" name="isPerishable" value="yes">Yes</input>
+          <input type="radio" name="isPerishable" value="no">No</input>
+    </form>
+    <form>
           <label id="refrigeration">Does it need to be refrigerated?</label>
-          <input type="radio" value="yes">Yes</input>
-          <input type="radio" value="no">No</input>
-        </li>
-        <li>
+          <input type="radio" name="needsFridge" value="yes">Yes</input>
+          <input type="radio" name="needsFridge" value="no">No</input>
+    </form>
+    <form>
           <label id="foodtypes">What types of food do you have to donate?</label>
           <input type="checkbox" value="grains">Grains</input>
           <input type="checkbox" value="cannedFruitsVeggies">Canned Fruits/Veggies</input>
           <input type="checkbox" value="freshFruitsVeggies">Fresh Fruits/Veggies</input>
           <input type="checkbox" value="frozenFoods">Frozen Foods</input>
           <input type="checkbox" value="beans">Beans</input>
-        </li>
-      </ol>
     </form>
   </div>
   <div class="form" id="isClothing">
     <form>
-      <ul>
-        <li>
           <label id="clothingType">What type of clothing?</label>
           <input type="checkbox" value="women">Women's</input>
           <input type="checkbox" value="men">Men's</input>
@@ -83,36 +73,26 @@
           <input type="checkbox" value="business">Business Attire</input>
           <input type="checkbox" value="winter">Winter Clothing</input>
           <input type="checkbox" value="summer">Summer Clothing</input>
-        </li>
-      </ul>
     </form>
   </div>
   <div class="form" id="isOther">
     <form>
-      <ul>
-        <li>
           <label id="defineOther">What would you like to donate?</label>
           <input type="text"></input>
-        </li>
-      </ul>
     </form>
   </div>
   <div class="form" id="end">
     <form>
-      <ul>
-        <li>
           <label id="name">What's your name?</label>
           <input type="text"></input>
-        </li>
-        <li>
+    </form>
+    <form>
           <label id="email">What's your email address?</label>
           <input type="text"></input>
-        </li>
-        <li>
+    </form>
+    <form>
           <label id="phoneNum">What's your phone number?</label>
           <input type="text"></input>
-        </li>
-      </ul>
     </form>
   </div>
   <div class="results" id="success">
@@ -120,11 +100,7 @@
       <p>SUCCESS result message</p>
     </form>
   </div>
-  <div class="results" id="fail">
-    <form>
-      <p>FAILURE result message</p>
-    </form>
-  </div>
+
 </div>
 
  </body>
