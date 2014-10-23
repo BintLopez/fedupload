@@ -1,0 +1,139 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?vkq8b7');
+	src:url('fonts/icomoon.eot?#iefixvkq8b7') format('embedded-opentype'),
+		url('fonts/icomoon.woff?vkq8b7') format('woff'),
+		url('fonts/icomoon.ttf?vkq8b7') format('truetype'),
+		url('fonts/icomoon.svg?vkq8b7#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-illinois:before {
+	content: "\4e";
+}
+.icon-home:before {
+	content: "\68";
+}
+.icon-clinic:before {
+	content: "\6f";
+}
+.icon-pacman:before {
+	content: "\e600";
+}
+.icon-diamonds:before {
+	content: "\e601";
+}
+.icon-books:before {
+	content: "\e602";
+}
+.icon-pushpin:before {
+	content: "\74";
+}
+.icon-calendar:before {
+	content: "\e603";
+}
+.icon-bubbles:before {
+	content: "\64";
+}
+.icon-leaf:before {
+	content: "\e604";
+}
+.icon-hammer:before {
+	content: "\e605";
+}
+.icon-earth:before {
+	content: "\75";
+}
+.icon-brightness-medium:before {
+	content: "\e606";
+}
+.icon-cool:before {
+	content: "\e620";
+}
+.icon-cool2:before {
+	content: "\e621";
+}
+.icon-home2:before {
+	content: "\e607";
+}
+.icon-cmd:before {
+	content: "\e608";
+}
+.icon-bulb:before {
+	content: "\e609";
+}
+.icon-news:before {
+	content: "\e60a";
+}
+.icon-banknote:before {
+	content: "\e60b";
+}
+.icon-mail:before {
+	content: "\e60c";
+}
+.icon-airplane:before {
+	content: "\e60d";
+}
+.icon-microphone:before {
+	content: "\e60e";
+}
+.icon-air:before {
+	content: "\e60f";
+}
+.icon-network:before {
+	content: "\e610";
+}
+.icon-bucket:before {
+	content: "\e611";
+}
+.icon-earth2:before {
+	content: "\e612";
+}
+.icon-light-bulb:before {
+	content: "\58";
+}
+.icon-list:before {
+	content: "\e613";
+}
+.icon-archive:before {
+	content: "\e614";
+}
+.icon-book:before {
+	content: "\e615";
+}
+.icon-flow-cascade:before {
+	content: "\e616";
+}
+.icon-arrow-down:before {
+	content: "\e617";
+}
+.icon-arrow-up-upload:before {
+	content: "\e618";
+}
+.icon-arrow-left:before {
+	content: "\e619";
+}
+.icon-arrow-right:before {
+	content: "\e61a";
+}
+.icon-arrow-down2:before {
+	content: "\50";
+}
+.icon-arrow-up2:before {
+	content: "\31";
+}

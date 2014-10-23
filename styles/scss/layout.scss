@@ -1,0 +1,183 @@
+@import "_utilities.scss";
+
+//note that if activate bootstrap will need to fix form label presets
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+	max-width: $maxWidth;
+	margin: 10px auto;
+}
+
+header{
+	background: $headerBackground;
+	border: solid 1px $headerBorder;
+	height: 100px;
+	width: 100%;
+	border-radius: 5px;
+	h1 {
+		font-family: $mainFont;
+		font-size: 2em; 
+		margin-left: 20px;
+		//margin: 10px 20px;
+		//padding: 20px 20px;
+		//text-align: center;
+		line-height: $h1Vcenter;
+		//vertical-align: middle; 
+		//background: $test;
+	}
+	margin-bottom: 20px;
+	@include clearfix;
+}
+
+form {
+	border: solid 1px $formOutline;
+	margin: 0 auto;
+	padding: 20px 30px;
+	font-family: $mainFont;
+	font-size: 1.3em;
+	background: $formBackground;
+	border-radius: 5px;
+	position: relative;
+	div .Aoption {
+		//background: red;
+		display: block;
+	}
+	label {
+		display: inline;
+		margin: 10px;
+	}
+	input {
+		display: inline-block;
+		margin: 10px;
+	}
+	&:after {
+		@include clearfix;
+	}
+}
+
+.button {
+	background: $btnColor;
+	//@include gradient($color1: $btnColor, $color2: $lightTeal);
+	position: absolute;
+	width: 200px;
+	height: 60px;
+	border-radius: 10px;
+	cursor: pointer;
+	float: right;
+	bottom: 20px;
+	right: 20px;
+	p {
+		text-align: center;
+        @include icomoon($icon: "heart4", $position: "before", $replace: true, $color: blue);
+	}
+}
+
+//RADIO AND CHECKBOX CUSTOM STYLES
+
+/* Hiding default checkbox and Radio button design */
+input[type=checkbox],input[type=radio] {
+    opacity: 0;
+    position: absolute;
+    z-index: 12;
+    width: 18px;
+    height: 18px;
+}
+
+/* Disable outline when clicked*/
+input[type=checkbox]:checked,input[type=radio]:checked,input[type=checkbox]:focus,input[type=radio]:focus {
+    outline: none !important;
+}
+
+input[type=checkbox]+.lbl,input[type=radio]+.lbl {
+    position: relative;
+    z-index: 11;
+    display: inline-block;
+    margin: 0;
+    line-height: 20px;
+    min-height: 14px;
+    min-width: 14px;
+    font-weight: normal;
+}
+
+/* Basic Checkbox styles */
+// input[type=checkbox]+.lbl::before,input[type=radio]+.lbl::before {
+//   font-family: icomoon;
+//   font-weight: normal;
+//   font-size: 11px;
+//   color: #2091cf;
+//   content: "\39";
+//   background-color: #FAFAFA;
+//   border: 1px solid #CCC;
+//   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+//   border-radius: 0;
+//   display: inline-block;
+//   text-align: center;
+//   vertical-align: middle;
+//   height: 13px;
+//   line-height: 13px;
+//   min-width: 13px;
+//   margin-right: 1px;
+//   margin-top: -5px;
+// }
+
+input[type=checkbox] {
+	@include icomoon($icon: 'checkbox-unchecked', $replace: true);
+}
+
+
+
+// /* Checked state styles */
+// input[type=checkbox]:checked+.lbl::before,input[type=radio]:checked+.lbl::before {
+//   display: inline-block;
+//   content: '\38';
+//   background-color: #F5F8FC;
+//   border-color: #adb8c0;
+//   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+// }
+
+// /* Hover state styles */
+// input[type=checkbox]:hover+.lbl::before,input[type=radio]:hover+.lbl::before,input[type=checkbox]+.lbl:hover::before,input[type=radio]+.lbl:hover::before {
+//   border-color: #1c7aad;
+// }
+
+// /* Shadow when checked or Active */
+// input[type=checkbox]:active+.lbl::before,input[type=radio]:active+.lbl::before,input[type=checkbox]:checked:active+.lbl::before,input[type=radio]:checked:active+.lbl::before {
+//   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+// }
+
+// /* Disabled state styles */
+// input[type=checkbox]:disabled+.lbl::before,input[type=radio]:disabled+.lbl::before,input[type=checkbox][disabled]+.lbl::before,input[type=radio][disabled]+.lbl::before,input[type=checkbox].disabled+.lbl::before,input[type=radio].disabled+.lbl::before {
+//   background-color: #DDD !important;
+//   border-color: #CCC !important;
+//   box-shadow: none !important;
+//   color: #BBB;
+// }
+
+// /* Styles for Radio button */
+// input[type=radio]+.lbl::before {
+//   border-radius: 32px;
+//   font-family: Arial,Helvetica,sans-serif;
+//   font-size: 36px;
+// }
+
+// input[type=radio]:checked+.lbl::before {
+//   content: "\41";
+// }
+
+
+// input[type="checkbox"]:checked + label {
+
+// }
+
+// #form {
+// 	width: 70%;
+// 	margin: 30px auto;
+// 	padding: 40px 30px;
+// 	background: rgba(123, 156, 26, .3);
+// 	border-radius: 15px;
+// }
