@@ -200,7 +200,9 @@ $btn.append($btnText);
 $btn.click(function() {
   //console.log('puppies');
   var resultsJSON = $questions.serializeArray();
-  console.log(resultsJSON);
+  var $resultsDisplay = $('<p>');
+  $resultsDisplay.append(resultsDisplay);
+  $container.append($resultsDisplay);
 });
 // $btn.css("width", "200px");
 // $btn.css("height", "200px");
