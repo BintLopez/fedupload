@@ -135,7 +135,8 @@ function displayQuestions(questionsList, onPage){
     var $Adisplay = $('<div>');
     $Adisplay.addClass('Aoption');
     if (questionsList.items[i].inputType === "radio") {
-      var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
+      // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
+      var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
     }
     else {
       var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ answers[x]+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
@@ -197,11 +198,17 @@ var $btn = $("<div>");
 $btn.addClass('button');
 var $btnText = $("<p>Next</p>");
 $btn.append($btnText);
+
+$container = $('#container');
 $btn.click(function() {
+ 
   //console.log('puppies');
   var resultsJSON = $questions.serializeArray();
+  console.log(resultsJSON);
+
+  // Below still needs work but we are wizards so it will happen <:) is our wizard emoticon
   var $resultsDisplay = $('<p>');
-  $resultsDisplay.append(resultsDisplay);
+  $resultsDisplay.append(resultsJSON);
   $container.append($resultsDisplay);
 });
 // $btn.css("width", "200px");
