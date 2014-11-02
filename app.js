@@ -42,6 +42,12 @@ var formQuestions = [
     "onPage": "isClothing",
   },
   {
+    "question": "What household items would you like to donate?",
+    "inputType": "text",
+    "name": "typeofHousehold",
+    "onPage": "isHousehold",
+  },
+  {
     "question": "What would you like to donate?",
     "inputType": "text",
     "name": "otherDonate",
@@ -181,6 +187,15 @@ $('.Clothing').change(function() {
 } else if (!this.checked){
   console.log("bye Clothing");
   $('.isClothing').remove();
+}
+}); 
+$('.Household').change(function() {
+    if (this.checked){
+    console.log("hi");
+      displayQuestions(questionsList, "isHousehold");
+} else if (!this.checked){
+  console.log("bye");
+  $('.isHousehold').remove();
 }
 }); 
  
