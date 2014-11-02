@@ -199,7 +199,7 @@ $btn.addClass('button');
 var $btnText = $("<p>Next</p>");
 $btn.append($btnText);
 
-$container = $('#container');
+$answersContainer = $('#answersContainer');
 $btn.click(function() {
  
   //console.log('puppies');
@@ -209,7 +209,7 @@ $btn.click(function() {
   // Below still needs work but we are wizards so it will happen <:) is our wizard emoticon
   var $resultsDisplay = $('<p>');
   $resultsDisplay.append(resultsJSON);
-  $container.append($resultsDisplay);
+  $answersContainer.append($resultsDisplay);
 });
 // $btn.css("width", "200px");
 // $btn.css("height", "200px");
