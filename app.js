@@ -201,15 +201,20 @@ $btn.append($btnText);
 
 $answersContainer = $('#answersContainer');
 $btn.click(function() {
- 
-  //console.log('puppies');
   var resultsJSON = $questions.serializeArray();
   console.log(resultsJSON);
 
   // Below still needs work but we are wizards so it will happen <:) is our wizard emoticon
-  var $resultsDisplay = $('<p>');
-  $resultsDisplay.append(resultsJSON);
-  $answersContainer.append($resultsDisplay);
+  for (var i = 0; i < resultsJSON.length; i++) {
+    console.log("wizards");
+    var $resultsQuestionItem = resultsJSON[i].name;
+    var $resultsAnswerItem = resultsJSON[i].value;
+    var $resultsDisplay = $('<div>');
+    $resultsDisplay.append($resultsQuestionItem);
+    $resultsDisplay.append($resultsAnswerItem);
+    $questions.css("display","none");
+    $answersContainer.append($resultsDisplay);
+  }
 });
 // $btn.css("width", "200px");
 // $btn.css("height", "200px");
