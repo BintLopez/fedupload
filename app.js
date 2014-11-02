@@ -199,7 +199,7 @@ $btn.addClass('button');
 var $btnText = $("<p>Next</p>");
 $btn.append($btnText);
 
-$container = $('#container');
+$answersContainer = $('#answersContainer');
 $btn.click(function() {
  
   //console.log('puppies');
