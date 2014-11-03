@@ -46,46 +46,37 @@ form {
 	div .Aoption {
 		display: block;
 	}
-	//makes the default radio & checkboxes invisible - NL 11/2
+	//START CUSTOM RADIO BUTTONS
+		//makes the default radio & checkboxes invisible - NL 11/2
 	input {
 		display: none;
 		margin: 10px;
 	}
-	.radioButton {
-		background: red; //testing that it's selected
-	}
-	.checkboxButton label{
-		background: blue; //testing that it's selected
-	}
+		//formats the label
 	label {
 		display: inline-block;  
     	cursor: pointer;  
     	position: relative;  
     	padding-left: 25px;  
     	margin-right: 15px;
-    	// this selects ALL labels -- radio and checkboxes
-    	&:before {
-    		@include customCheckbox;
-    	} 
-    	
-    	/*Below is what I want to work*/
-
-    	// .radioButton:before { 
-    	// 	@include customRadio;
-    	// } 
-    	// .checkboxButton:before {
-    	// 	@include customCheckbox;
-    	// } 
 	}
+		//puts customRadio circle before a label w/ class .radioButton
+	.radioButton:before {
+		@include customRadio;
+		//CAN CHANGE COLOR IF WANT TO
+		//background: red;
+	}
+		//puts customCheckbox square before a label w/ class .checkboxButton
+	.checkboxButton:before {
+		@include customCheckbox;
+		// CAN CHANGE COLOR IF WANT TO
+		// background: blue; 
+	}
+	//END CUSTOM RADIO BUTTONS
 	&:after {
 		@include clearfix;
 	}
 } 
-
-//DOES NOT WORK
-form label .radioButton:before {
-	border-radius: 8px;
-}
 
 .button {
 	background: $btnColor;

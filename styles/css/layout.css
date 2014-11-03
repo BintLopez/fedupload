@@ -221,36 +221,41 @@ form {
   form input {
     display: none;
     margin: 10px; }
-  form .radioButton {
-    background: red; }
-  form .checkboxButton label {
-    background: blue; }
   form label {
     display: inline-block;
     cursor: pointer;
     position: relative;
     padding-left: 25px;
-    margin-right: 15px;
-    /*Below is what I want to work*/ }
-    form label:before {
-      content: "";
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin-right: 10px;
-      position: absolute;
-      left: 0;
-      bottom: 2px;
-      margin-bottom: 1px;
-      background-color: #aaa;
-      box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8); }
+    margin-right: 15px; }
+  form .radioButton:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    margin-bottom: 1px;
+    background-color: #aaa;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8);
+    border-radius: 8px; }
+  form .checkboxButton:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    margin-bottom: 1px;
+    background-color: #aaa;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8); }
   form:after {
     content: "";
     display: table;
     clear: both; }
-
-form label .radioButton:before {
-  border-radius: 8px; }
 
 .button {
   background: #6d929b;
