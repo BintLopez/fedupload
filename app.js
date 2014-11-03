@@ -144,10 +144,12 @@ function displayQuestions(questionsList, onPage){
       // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
       var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
       //Added radioButton class to radio answers to help w/ custom radios and checkboxes -- NL 11/02
-      $Aoption.addClass("radioButton");
+      $Aoption.addClass("radioButton");   
     }
     else {
       var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ answers[x]+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
+      //Added checkboxButton class to help w/ custom stylings of checkboxes
+      $Aoption.addClass("checkboxButton"); 
     }
     $Adisplay.append($Aoption);
     $container.append($Adisplay);

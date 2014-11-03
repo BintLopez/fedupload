@@ -55,7 +55,7 @@ form {
     	margin-right: 15px; 
     	&:before { 
 			content: "";  
-			display: inline-block;    
+			display: inline-block;     
 			width: 16px;  
 			height: 16px;  
 			margin-right: 10px;  
@@ -65,9 +65,9 @@ form {
 			//margin-bottom: 1px;  
 			background-color: #aaa;  
 			box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);  
-			.radioButton {  
-    			border-radius: 8px;  
-			}  
+			// &.radioButton {
+			// 	border-radius: 8px;  
+			// }
     	}  
 	}
 	//makes the default radio & checkboxes invisible
@@ -78,7 +78,7 @@ form {
 	&:after {
 		@include clearfix;
 	}
-}
+} 
 
 .button {
 	background: $btnColor;
