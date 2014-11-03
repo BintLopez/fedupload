@@ -48,11 +48,28 @@ form {
 		display: block;
 	}
 	label {
-		display: inline;
-		margin: 10px;
+		display: inline-block;  
+    	cursor: pointer;  
+    	position: relative;  
+    	padding-left: 25px;  
+    	margin-right: 15px; 
+    	&:before { 
+			content: "";  
+			display: inline-block;    
+			width: 16px;  
+			height: 16px;  
+			margin-right: 10px;  
+			position: absolute;  
+			left: 0;
+			bottom: 0;  
+			//margin-bottom: 1px;  
+			background-color: #aaa;  
+			box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);   
+    	}  
 	}
+	//makes the default radio & checkboxes invisible
 	input {
-		display: inline-block;
+		display: none;
 		margin: 10px;
 	}
 	&:after {
