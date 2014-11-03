@@ -61,10 +61,13 @@ form {
 			margin-right: 10px;  
 			position: absolute;  
 			left: 0;
-			bottom: 0;  
+			bottom: 2px;  
 			//margin-bottom: 1px;  
 			background-color: #aaa;  
-			box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);   
+			box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);  
+			.radioButton {  
+    			border-radius: 8px;  
+			}  
     	}  
 	}
 	//makes the default radio & checkboxes invisible
