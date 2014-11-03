@@ -51,18 +51,31 @@ form {
 		display: none;
 		margin: 10px;
 	}
-	label .radioButton {
-		background-color: red;
+	.radioButton {
+		background: red; //testing that it's selected
+	}
+	.checkboxButton label{
+		background: blue; //testing that it's selected
 	}
 	label {
 		display: inline-block;  
     	cursor: pointer;  
     	position: relative;  
     	padding-left: 25px;  
-    	margin-right: 15px; 
-    	&:before { 
-    		@include customRadio;
-    	}  
+    	margin-right: 15px;
+    	// this selects ALL labels -- radio and checkboxes
+    	&:before {
+    		@include customCheckbox;
+    	} 
+    	
+    	/*Below is what I want to work*/
+
+    	// .radioButton:before { 
+    	// 	@include customRadio;
+    	// } 
+    	// .checkboxButton:before {
+    	// 	@include customCheckbox;
+    	// } 
 	}
 	&:after {
 		@include clearfix;

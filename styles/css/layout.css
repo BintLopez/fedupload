@@ -221,14 +221,17 @@ form {
   form input {
     display: none;
     margin: 10px; }
-  form label .radioButton {
-    background-color: red; }
+  form .radioButton {
+    background: red; }
+  form .checkboxButton label {
+    background: blue; }
   form label {
     display: inline-block;
     cursor: pointer;
     position: relative;
     padding-left: 25px;
-    margin-right: 15px; }
+    margin-right: 15px;
+    /*Below is what I want to work*/ }
     form label:before {
       content: "";
       display: inline-block;
@@ -240,8 +243,7 @@ form {
       bottom: 2px;
       margin-bottom: 1px;
       background-color: #aaa;
-      box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8);
-      border-radius: 8px; }
+      box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8); }
   form:after {
     content: "";
     display: table;
