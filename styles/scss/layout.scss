@@ -72,6 +72,9 @@ form {
 		// CAN CHANGE COLOR IF WANT TO
 		// background: blue; 
 	}
+	.checkedDisplay {
+		background: red;
+	}
 	//END CUSTOM RADIO BUTTONS
 	&:after {
 		@include clearfix;
