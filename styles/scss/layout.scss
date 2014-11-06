@@ -49,7 +49,7 @@ form {
 	//START CUSTOM RADIO BUTTONS
 		//makes the default radio & checkboxes invisible - NL 11/2
 	input {
-		display: none;
+		display: inline-block;
 		margin: 10px;
 	}
 		//formats the label
@@ -61,20 +61,21 @@ form {
     	margin-right: 15px;
 	}
 		//puts customRadio circle before a label w/ class .radioButton
-	.radioButton:before {
-		@include customRadio;
-		//CAN CHANGE COLOR IF WANT TO
-		//background: red;
-	}
-		//puts customCheckbox square before a label w/ class .checkboxButton
-	.checkboxButton:before {
-		@include customCheckbox;
-		// CAN CHANGE COLOR IF WANT TO
-		// background: blue; 
-	}
-	.checkedDisplay {
-		background: red;
-	}
+	// .radioButton:before {
+	// 	//@include icomoon($icon: "heart4", $position: "before", $replace: true, $color: blue);
+	// 	@include customRadio;
+	// 	//CAN CHANGE COLOR IF WANT TO
+	// 	//background: red;
+	// }
+	// 	//puts customCheckbox square before a label w/ class .checkboxButton
+	// .checkboxButton:before {
+	// 	@include customCheckbox;
+	// 	// CAN CHANGE COLOR IF WANT TO
+	// 	// background: blue; 
+	// }
+	// .checkedDisplay {
+	// 	background: red;
+	// }
 	//END CUSTOM RADIO BUTTONS
 	&:after {
 		@include clearfix;

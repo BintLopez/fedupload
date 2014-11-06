@@ -177,17 +177,30 @@ displayQuestions(questionsList, "startPage");
 // It monitors for a change in the .Food answer and checks if it is checked.  If checked the isFood questions display.  If not (!) checked, it removes the isFood questions.  
 
 
-//TRYING TO ADD CLASS TO BLANK BUTTON IF CHECKED
-//NOT WORKING -- NL 11/2
-$('.radioButton').change(function() {
-    if (this.checked){
-    console.log("hi");
-      //displayQuestions(questionsList, "isFood");
-} else if (!this.checked){
-  console.log("bye");
-  //$('.isFood').remove();
-}
-}); 
+
+//==========================WORK IN PROGRESS=========
+
+// $('.radioButton').click(function() {
+//   console.log('test');
+// });
+
+
+
+// //TRYING TO ADD CLASS TO BLANK BUTTON IF CHECKED
+// //NOT WORKING -- NL 11/2
+// $('.radioButton').change(function() {
+//     if (this.checked){
+//     console.log("hi");
+//       //displayQuestions(questionsList, "isFood");
+// } else if (!this.checked){
+//   console.log("bye");
+//   //$('.isFood').remove();
+// }
+// }); 
+
+
+//===================================================
+
 
 
 $('.Food').change(function() {
