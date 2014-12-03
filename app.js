@@ -276,8 +276,7 @@ for (var i = 0; i < resultsJSON.length; i++) {
       };
 
     if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {
-        console.log("value" + resultsJSON[i].value);
-        console.log("name" + resultsJSON[i].name);
+       
         var $exceptionMessage = $('<p>Due to food due to food safety regulations, the pantry cannot accept perishable or food needing refrigeration from individuals.</p>');
         $resultsDisplay.append($exceptionMessage); 
            // };
