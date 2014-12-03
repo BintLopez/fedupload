@@ -202,45 +202,38 @@ displayQuestions(questionsList, "startPage");
 //===================================================
 
 
-
 $('.Food').change(function() {
     if (this.checked){
-    console.log("hi");
       displayQuestions(questionsList, "isFood");
 } else if (!this.checked){
-  console.log("bye");
   $('.isFood').remove();
 }
 }); 
 
 $('.Clothing').change(function() {
     if (this.checked){
-    console.log("hi Clothing");
       displayQuestions(questionsList, "isClothing");
 } else if (!this.checked){
-  console.log("bye Clothing");
   $('.isClothing').remove();
 }
 }); 
 $('.Household').change(function() {
     if (this.checked){
-    console.log("hi");
       displayQuestions(questionsList, "isHousehold");
 } else if (!this.checked){
-  console.log("bye");
   $('.isHousehold').remove();
 }
 }); 
  
 $('.Other').change(function() {
     if (this.checked){
-    console.log("hi");
       displayQuestions(questionsList, "isOther");
 } else if (!this.checked){
-  console.log("bye");
   $('.isOther').remove();
 }
 }); 
+
+
 
 var $btn = $("<div>");
 $btn.addClass('button');
@@ -248,30 +241,61 @@ var $btnText = $("<p>Next</p>");
 $btn.append($btnText);
 
 $answersContainer = $('#answersContainer');
+
+var possibleAnswerslist =[];
+
+function answersList(questionsList){ 
+  for (var i = 0; i < questionsList.items.length; i++) {
+  var answers = questionsList.items[i].possibleAnswers
+      for (x in answers){
+        var t = answers[x];
+        if (t.indexOf("Yes") == -1 && t.indexOf("No") == -1 && t.indexOf("Other") == -1) {
+            possibleAnswerslist.push(t);
+      };
+    }
+}};
+
+
+
 $btn.click(function() {
-  var resultsJSON = $questions.serializeArray();
-  console.log(resultsJSON);
 
-  // Below still needs work but we are wizards so it will happen <:) is our wizard emoticon
-  for (var i = 0; i < resultsJSON.length; i++) {
-    console.log("wizards");
-    var $resultsQuestionItem = resultsJSON[i].name;
-    var $resultsAnswerItem = resultsJSON[i].value;
-    var $resultsDisplay = $('<div>');
-    $resultsDisplay.append($resultsQuestionItem);
-    $resultsDisplay.append($resultsAnswerItem);
-    $questions.css("display","none");
+var resultsJSON = $questions.serializeArray();
+
+answersList(questionsList);
+
+var $resultsDisplay = $('<div>');
+
+  
+for (var i = 0; i < resultsJSON.length; i++) { 
+      // for (var x = 0; x < questionsList.items.length; x++){
+        // displays the donorType on the page
+    if(resultsJSON[i].name  == "donorType"){
+  // Displays the type of person selected by the user
+      var $resultsAnswerItem = ('<p>' + "You are a "+ resultsJSON[0].value + '.' + '</p>');
+      $resultsDisplay.append($resultsAnswerItem); 
+      };
+
+    if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {
+        console.log("value" + resultsJSON[i].value);
+        console.log("name" + resultsJSON[i].name);
+        var $exceptionMessage = $('<p>Due to food due to food safety regulations, the pantry cannot accept perishable or food needing refrigeration from individuals.</p>');
+        $resultsDisplay.append($exceptionMessage); 
+           // };
+         }
+
     $answersContainer.append($resultsDisplay);
-  }
+    $questions.css("display","none"); 
+}
 });
-// $btn.css("width", "200px");
-// $btn.css("height", "200px");
-// $btn.css("background", "red");
-$questions.append($btn);
 
-// function pageNav() {
-//   if 
-// }
+     $questions.append($btn);
+
+    
+
+
+ 
+  
+
 
   
 
