@@ -262,7 +262,6 @@ $btn.click(function() {
 var resultsJSON = $questions.serializeArray();
 
 answersList(questionsList);
-
 var $resultsDisplay = $('<div>');
 
   
@@ -281,15 +280,56 @@ for (var i = 0; i < resultsJSON.length; i++) {
         $resultsDisplay.append($exceptionMessage); 
            // };
          }
+} 
+$resultsDisplay.append('<div>' + 'Donating...' + '</div>'); 
+var $donationList = $('<ul>'); 
+$resultsDisplay.append($donationList);  
 
+for (var i = 0; i < resultsJSON.length; i++) { 
+    var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
+    console.log(a); 
+    if(a > 4){        
+    var $resultsQuestionItem = ('<p>' + resultsJSON[i].name + '</p>');
+    $resultsDisplay.append($resultsQuestionItem)}
+  
+}
+    // var $resultsAnswerItem = resultsJSON[i].value;
+   
+    $resultsDisplay.append($resultsQuestionItem);
     $answersContainer.append($resultsDisplay);
     $questions.css("display","none"); 
-}
+
 });
 
      $questions.append($btn);
 
     
+
+// Precious button click function
+// $btn.click(function() {
+//   var resultsJSON = $questions.serializeArray();
+//   console.log(resultsJSON);
+
+//   // Below still needs work but we are wizards so it will happen <:) is our wizard emoticon
+//   for (var i = 0; i < resultsJSON.length; i++) {
+//     console.log("wizards");
+//     var $resultsQuestionItem = resultsJSON[i].name;
+//     var $resultsAnswerItem = resultsJSON[i].value;
+//     var $resultsDisplay = $('<div>');
+//     $resultsDisplay.append($resultsQuestionItem);
+//     $resultsDisplay.append($resultsAnswerItem);
+//     $questions.css("display","none");
+//     $answersContainer.append($resultsDisplay);
+//   }
+// });
+// // $btn.css("width", "200px");
+// // $btn.css("height", "200px");
+// // $btn.css("background", "red");
+// $questions.append($btn);
+
+// // function pageNav() {
+// //   if 
+// // }
 
 
  
