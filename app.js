@@ -202,38 +202,21 @@ displayQuestions(questionsList, "startPage");
 //===================================================
 
 
-$('.Food').change(function() {
-    if (this.checked){
-      displayQuestions(questionsList, "isFood");
-} else if (!this.checked){
-  $('.isFood').remove();
-}
-}); 
 
-$('.Clothing').change(function() {
+function showQuestions(thing){
+$('.' + thing).change(function() {
     if (this.checked){
-      displayQuestions(questionsList, "isClothing");
+      displayQuestions(questionsList, "is" + thing);
 } else if (!this.checked){
-  $('.isClothing').remove();
+  $('.is' + thing).remove();
 }
 }); 
-$('.Household').change(function() {
-    if (this.checked){
-      displayQuestions(questionsList, "isHousehold");
-} else if (!this.checked){
-  $('.isHousehold').remove();
 }
-}); 
- 
-$('.Other').change(function() {
-    if (this.checked){
-      displayQuestions(questionsList, "isOther");
-} else if (!this.checked){
-  $('.isOther').remove();
-}
-}); 
 
-
+var listQuestiontopics = ["Food", "Clothing", "Household", "Other"] 
+for( i in listQuestiontopics){
+  showQuestions(listQuestiontopics[i]);
+};
 
 var $btn = $("<div>");
 $btn.addClass('button');
@@ -273,8 +256,7 @@ for (var i = 0; i < resultsJSON.length; i++) {
       var $resultsAnswerItem = ('<p>' + "You are a "+ resultsJSON[0].value + '.' + '</p>');
       $resultsDisplay.append($resultsAnswerItem); 
       };
-
-    if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {
+   if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {
        
         var $exceptionMessage = $('<p>Due to food due to food safety regulations, the pantry cannot accept perishable or food needing refrigeration from individuals.</p>');
         $resultsDisplay.append($exceptionMessage); 
@@ -282,8 +264,10 @@ for (var i = 0; i < resultsJSON.length; i++) {
          }
 } 
 $resultsDisplay.append('<div>' + 'Donating...' + '</div>'); 
-var $donationList = $('<ul>'); 
-$resultsDisplay.append($donationList);  
+// var $donationList = $('<ul>'); 
+// $resultsDisplay.append($donationList);
+
+
 
 for (var i = 0; i < resultsJSON.length; i++) { 
     var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
