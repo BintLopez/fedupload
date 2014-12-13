@@ -143,6 +143,7 @@ function displayQuestions(questionsList, onPage){
         if (questionsList.items[i].inputType === "radio") {
           // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
+            console.log($Aoption);
             //Added radioButton class to radio answers to help w/ custom radios and checkboxes -- NL 11/02
           $Aoption.addClass("radioButton");   
         }
