@@ -5,6 +5,7 @@
   src: url("fonts/icomoon.eot?#iefixcb93hh") format("embedded-opentype"), url("fonts/icomoon.woff?cb93hh") format("woff"), url("fonts/icomoon.ttf?cb93hh") format("truetype"), url("fonts/icomoon.svg?cb93hh#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';
   speak: none;
@@ -21,6 +22,7 @@
   font-family: "IcoMoon";
   src: url("font/icomoon.eot");
   src: url("font/icomoon.eot?#iefix") format("embedded-opentype"), url("font/icomoon.woff") format("woff"), url("font/icomoon.ttf") format("truetype"), url("font/icomoon.svg#icomoon") format("svg"); }
+
 .icon-home {
   content: "\68";
   margin-right: 10px; }
@@ -44,7 +46,7 @@
 .icon-heart4 {
   content: "\52";
   margin-right: 10px;
-  color: #E8D0A9;
+  color: #e8d0a9;
   font-weight: bold; }
 
 .icon-subtract {
@@ -192,8 +194,8 @@ body {
   margin: 10px auto; }
 
 header {
-  background: #E8D0A9;
-  border: solid 1px #FF9933;
+  background: #e8d0a9;
+  border: solid 1px #ff9933;
   height: 100px;
   width: 100%;
   border-radius: 5px;
@@ -218,44 +220,6 @@ form {
   position: relative; }
   form div .Aoption {
     display: block; }
-  form input {
-    display: inline-block;
-    margin: 10px;
-    opacity: 0;
-    z-index: 1; }
-  form label {
-    display: inline-block;
-    cursor: pointer;
-    position: relative;
-    padding-left: 25px;
-    margin-right: 15px; }
-  form .radioButton:before {
-    content: "";
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-right: 10px;
-    position: absolute;
-    left: -25px;
-    bottom: 2px;
-    margin-bottom: 1px;
-    background-color: #aaa;
-    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8);
-    border-radius: 8px; }
-  form .checkboxButton:before {
-    content: "";
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-right: 10px;
-    position: absolute;
-    left: -25px;
-    bottom: 2px;
-    margin-bottom: 1px;
-    background-color: #aaa;
-    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 0px rgba(255, 255, 255, 0.8); }
-  form .checkedDisplay {
-    background: red; }
   form:after {
     content: "";
     display: table;
@@ -275,5 +239,3 @@ form {
     text-align: center; }
 
 /* Hiding default checkbox and Radio button design */
-
-/*# sourceMappingURL=layout.css.map */

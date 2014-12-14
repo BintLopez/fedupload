@@ -48,38 +48,38 @@ form {
 	}
 	//START CUSTOM RADIO BUTTONS
 		//makes the default radio & checkboxes invisible - NL 11/2
-	input {
-		display: inline-block;
-		margin: 10px;
-		opacity: 0;
-		z-index: 1;
-	}
-		//formats the label
-	label {
-		display: inline-block;  
-    	cursor: pointer;  
-    	position: relative;  
-    	padding-left: 25px;  
-    	margin-right: 15px;
-	}
-		//puts customRadio circle before a label w/ class .radioButton
-	.radioButton:before {
-		//@include icomoon($icon: "heart4", $position: "before", $replace: true, $color: blue);
-		@include customRadio;
-		//z-index: -1;
-		//CAN CHANGE COLOR IF WANT TO
-		//background: red;
-	}
-		//puts customCheckbox square before a label w/ class .checkboxButton
-	.checkboxButton:before {
-		@include customCheckbox;
-		//z-index: -1;
-		// CAN CHANGE COLOR IF WANT TO
-		// background: blue; 
-	}
-	.checkedDisplay {
-		background: red;
-	}
+	// input {
+	// 	display: inline-block;
+	// 	margin: 10px;
+	// 	opacity: 0;
+	// 	z-index: 1;
+	// }
+	// 	//formats the label
+	// label {
+	// 	display: inline-block;  
+ //    	cursor: pointer;  
+ //    	position: relative;  
+ //    	padding-left: 25px;  
+ //    	margin-right: 15px;
+	// }
+	// 	//puts customRadio circle before a label w/ class .radioButton
+	// .radioButton:before {
+	// 	//@include icomoon($icon: "heart4", $position: "before", $replace: true, $color: blue);
+	// 	@include customRadio;
+	// 	//z-index: -1;
+	// 	//CAN CHANGE COLOR IF WANT TO
+	// 	//background: red;
+	// }
+	// 	//puts customCheckbox square before a label w/ class .checkboxButton
+	// .checkboxButton:before {
+	// 	@include customCheckbox;
+	// 	//z-index: -1;
+	// 	// CAN CHANGE COLOR IF WANT TO
+	// 	// background: blue; 
+	// }
+	// .checkedDisplay {
+	// 	background: red;
+	// }
 	//END CUSTOM RADIO BUTTONS
 	&:after {
 		@include clearfix;
