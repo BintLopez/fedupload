@@ -205,7 +205,7 @@ header {
     font-family: "Ubuntu", sans-serif;
     font-size: 2em;
     margin-left: 20px;
-    line-height: 100px; }
+    line-height: 30%; }
 
 form {
   border: solid 1px #6d929b;
