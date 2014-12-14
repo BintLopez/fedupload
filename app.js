@@ -1,3 +1,5 @@
+//DATA
+
 var formQuestions = [
   {
     "question": "Are you an... ?",
@@ -105,6 +107,8 @@ var wishList4Clients = [
 "Gift cards at stores",
 "Fans and heaters"
 ]
+
+//THE MODEL
   
 function Question(config) {
     config = config || {};
@@ -114,7 +118,9 @@ function Question(config) {
     this.name  = config.name || " ";
     this.onPage = config.onPage || " ";
 };
-  
+
+//FUNCTION THAT INSTANTIATES AN OBJECT
+
 function QuestionLib(formQuestions) {
   this.items = [];
   for (var i = 0; i < formQuestions.length; i++) {
@@ -124,6 +130,9 @@ function QuestionLib(formQuestions) {
 
 var questionsList = new QuestionLib(formQuestions);
 //console.log(questionsList.items.length);
+
+
+//THE VIEW
 
 $questions = $('#questions');
 
@@ -143,6 +152,7 @@ function displayQuestions(questionsList, onPage){
         if (questionsList.items[i].inputType === "radio") {
           // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
+            console.log($Aoption);
             //Added radioButton class to radio answers to help w/ custom radios and checkboxes -- NL 11/02
           $Aoption.addClass("radioButton");   
         }
@@ -257,8 +267,10 @@ for (var i = 0; i < resultsJSON.length; i++) {
       $resultsDisplay.append($resultsAnswerItem); 
       };
    if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {
-       
+      
+
         var $exceptionMessage = $('<p>Due to food safety regulations, the pantry cannot accept perishable or food needing refrigeration from individuals.</p>');
+
         $resultsDisplay.append($exceptionMessage); 
            // };
          }
