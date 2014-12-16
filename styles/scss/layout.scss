@@ -10,7 +10,7 @@
 
 body {
 	max-width: $maxWidth;
-	margin: 10px auto;
+	margin: 30px auto;
 }
 
 header{
@@ -21,8 +21,9 @@ header{
 	border-radius: 5px;
 	h1 {
 		font-family: $mainFont;
-		font-size: 2em; 
+		font-size: 27px; 
 		margin-left: 20px;
+		font-weight: normal;
 		//margin: 10px 20px;
 		//padding: 20px 20px;
 		//text-align: center;
@@ -30,16 +31,20 @@ header{
 		//vertical-align: middle; 
 		//background: $test;
 	}
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 	@include clearfix;
 }
 
 form {
 	border: solid 1px $formOutline;
-	margin: 0 auto;
-	padding: 20px 30px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 20px;
+	margin-bottom: 0px;
+	padding: 20px 50px;
 	font-family: $mainFont;
 	font-size: 1.3em;
+	line-height: 18px;
 	background: $formBackground;
 	border-radius: 5px;
 	position: relative;
