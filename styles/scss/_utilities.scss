@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400);
 
 
-$mainFont: 'Ubuntu', sans-serif;
+$mainFont: "Georgia","Times New Roman",Helvetica,Arial,sans-serif;
 
 //color library
 $seaGreen: rgba(51, 255, 102, .5);
@@ -22,9 +22,9 @@ $headerBorder: #FF9933;
 
 $maxWidth: 70%;
 
-$headerHeight: 100px;
-$h1bottomAlign: $headerHeight*2;
-$h1topAlign: 0px;
+$headerHeight: 30%;
+$h1bottomAlign: $headerHeight*1.5;
+$h1topAlign: -10%;
 $h1Vcenter: $headerHeight;
 
 
