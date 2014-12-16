@@ -119,6 +119,12 @@ function Question(config) {
     this.onPage = config.onPage || " ";
 };
 
+//QUESTION OBJECT METHODS
+Question.prototype.displayForm = function() {
+  console.log(this.question);
+}
+
+
 //FUNCTION THAT INSTANTIATES AN OBJECT
 
 function QuestionLib(formQuestions) {
@@ -132,6 +138,7 @@ var questionsList = new QuestionLib(formQuestions);
 //console.log(questionsList.items.length);
 
 
+
 //THE VIEW
 
 $questions = $('#questions');
@@ -139,7 +146,8 @@ $questions = $('#questions');
 
 function displayQuestions(questionsList, onPage){ 
   for (var i = 0; i < questionsList.items.length; i++) {
-    // display question
+    // display questions
+
     if (questionsList.items[i].onPage == onPage){
       // I added a class to each question with the name of th equestion 
       var $container = $('<div ' + 'class=' + '"' + questionsList.items[i].onPage + '"' + '>');
@@ -152,7 +160,7 @@ function displayQuestions(questionsList, onPage){
         if (questionsList.items[i].inputType === "radio") {
           // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
-            console.log($Aoption);
+            //console.log($Aoption);
             //Added radioButton class to radio answers to help w/ custom radios and checkboxes -- NL 11/02
           $Aoption.addClass("radioButton");   
         }
@@ -249,10 +257,11 @@ function answersList(questionsList){
 }};
 
 
-
+//BUTTON TO SUBMIT FORM
 $btn.click(function() {
 
 var resultsJSON = $questions.serializeArray();
+console.log(resultsJSON);
 
 answersList(questionsList);
 var $resultsDisplay = $('<div>');
