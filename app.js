@@ -222,22 +222,25 @@ displayQuestions(questionsList, "startPage");
 
 
 function showQuestions(thing){
-$('.' + thing).change(function() {
+  $('.' + thing).change(function() {
     if (this.checked){
       displayQuestions(questionsList, "is" + thing);
-} else if (!this.checked){
-  $('.is' + thing).remove();
-}
-}); 
-}
+    } 
+    else if (!this.checked){
+      $('.is' + thing).remove();
+    }
+  }); 
+};
 
-var listQuestiontopics = ["Food", "Clothing", "Household", "Other"] 
+var listQuestiontopics = ["Food", "Clothing", "Household", "Other"];
+
 for( i in listQuestiontopics){
   showQuestions(listQuestiontopics[i]);
 };
 
 var $btn = $("<div>");
 $btn.addClass('button');
+
 var $btnText = $("<p>Next</p>");
 $btn.append($btnText);
 
@@ -260,46 +263,46 @@ function answersList(questionsList){
 //BUTTON TO SUBMIT FORM
 $btn.click(function() {
 
-var resultsJSON = $questions.serializeArray();
-console.log(resultsJSON);
+  var resultsJSON = $questions.serializeArray();
+  console.log(resultsJSON);
 
-answersList(questionsList);
-var $resultsDisplay = $('<div>');
+  answersList(questionsList);
+  var $resultsDisplay = $('<div>');
 
-  
-for (var i = 0; i < resultsJSON.length; i++) { 
-      // for (var x = 0; x < questionsList.items.length; x++){
-        // displays the donorType on the page
+    
+  for (var i = 0; i < resultsJSON.length; i++) { 
+    // for (var x = 0; x < questionsList.items.length; x++){
+    // displays the donorType on the page
     if(resultsJSON[i].name  == "donorType"){
-  // Displays the type of person selected by the user
+    // Displays the type of person selected by the user
       var $resultsAnswerItem = ('<p>' + "You are a "+ resultsJSON[0].value + '.' + '</p>');
       $resultsDisplay.append($resultsAnswerItem); 
-      };
-   if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {       
-        var $exceptionMessage = $('<p>Due to food safety regulations, the pantry cannot accept perishable items or food needing refrigeration from individuals.</p>');
-        $resultsDisplay.append($exceptionMessage); 
-           // };
-         }
-} 
-$resultsDisplay.append('<div>' + 'Donating...' + '</div>'); 
-// var $donationList = $('<ul>'); 
-// $resultsDisplay.append($donationList);
+    };
+    if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {       
+      var $exceptionMessage = $('<p>Due to food safety regulations, the pantry cannot accept perishable items or food needing refrigeration from individuals.</p>');
+      $resultsDisplay.append($exceptionMessage); 
+    }
+  }
 
+  $resultsDisplay.append('<div>' + 'Donating...' + '</div>'); 
+    // var $donationList = $('<ul>'); 
+    // $resultsDisplay.append($donationList);
 
-
-for (var i = 0; i < resultsJSON.length; i++) { 
+  for (var i = 0; i < resultsJSON.length; i++) { 
     var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
     console.log(a); 
     if(a > 4){        
-    var $resultsQuestionItem = ('<p>' + resultsJSON[i].name + '</p>');
-    $resultsDisplay.append($resultsQuestionItem)}
+      var $resultsQuestionItem = ('<p>' + resultsJSON[i].name + '</p>');
+      console.log($resultsQuestionItem);
+      $resultsDisplay.append($resultsQuestionItem);
+    }
+  }
   
-}
-    // var $resultsAnswerItem = resultsJSON[i].value;
+  // var $resultsAnswerItem = resultsJSON[i].value;
    
-    $resultsDisplay.append($resultsQuestionItem);
-    $answersContainer.append($resultsDisplay);
-    $questions.css("display","none"); 
+  $resultsDisplay.append($resultsQuestionItem);
+  $answersContainer.append($resultsDisplay);
+  $questions.css("display","none"); 
 
 });
 
