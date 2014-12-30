@@ -226,27 +226,30 @@ function answersList(questionsList){
 //BUTTON TO SUBMIT FORM
 $btn.click(function() {
 
+  var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
+
   var resultsJSON = $questions.serializeArray();
   console.log(resultsJSON);
 
   answersList(questionsList);
   var $resultsDisplay = $('<div>');
-
+  $resultsDisplay.append($resultsMessage);
     
   for (var i = 0; i < resultsJSON.length; i++) { 
     // displays the donorType on the page
     if(resultsJSON[i].name  == "donorType"){
     // Displays the type of person selected by the user
       if(resultsJSON[0].value === 'Individual') {
-        var $resultsAnswerItem = ('<p>' + "You are an "+ resultsJSON[0].value + '.' + '</p>');
+        var $resultsAnswerItem = ('<p>' + "You're giving as an "+ resultsJSON[0].value + '.' + '</p>');
       }
       else {
-        var $resultsAnswerItem = ('<p>' + "You are a "+ resultsJSON[0].value + '.' + '</p>');
+        var $resultsAnswerItem = ('<p>' + "You're giving as a "+ resultsJSON[0].value + '.' + '</p>');
         }
       $resultsDisplay.append($resultsAnswerItem); 
     };
-    if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {       
+    if(resultsJSON[0].value === "Individual" && resultsJSON[i].name === "isPerishable" && resultsJSON[i].value === "Yes" || resultsJSON[0].value === "Individual" && resultsJSON[i].name === "needRefrigerator" & resultsJSON[i].value === "Yes") {       
       var $exceptionMessage = $('<p>Due to food safety regulations, the pantry cannot accept perishable items or food needing refrigeration from individuals.</p>');
+      $exceptionMessage.addClass('errorDisplay');
       $resultsDisplay.append($exceptionMessage); 
     }
   }

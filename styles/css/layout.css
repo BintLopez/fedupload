@@ -244,4 +244,7 @@ header {
   .button p {
     text-align: center; }
 
+.errorDisplay {
+  border: 1px red dashed; }
+
 /* Hiding default checkbox and Radio button design */
