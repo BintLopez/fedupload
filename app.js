@@ -198,11 +198,14 @@ for( i in listQuestiontopics){
   showQuestions(listQuestiontopics[i]);
 };
 
+//NEXT BUTTON VIEW
 var $btn = $("<div>");
 $btn.addClass('button');
-
 var $btnText = $("<p>Next</p>");
 $btn.append($btnText);
+$formContainer.append($btn);
+
+
 
 var $answersContainer = $('#answersContainer');
 
@@ -231,11 +234,15 @@ $btn.click(function() {
 
     
   for (var i = 0; i < resultsJSON.length; i++) { 
-    // for (var x = 0; x < questionsList.items.length; x++){
     // displays the donorType on the page
     if(resultsJSON[i].name  == "donorType"){
     // Displays the type of person selected by the user
-      var $resultsAnswerItem = ('<p>' + "You are a "+ resultsJSON[0].value + '.' + '</p>');
+      if(resultsJSON[0].value === 'Individual') {
+        var $resultsAnswerItem = ('<p>' + "You are an "+ resultsJSON[0].value + '.' + '</p>');
+      }
+      else {
+        var $resultsAnswerItem = ('<p>' + "You are a "+ resultsJSON[0].value + '.' + '</p>');
+        }
       $resultsDisplay.append($resultsAnswerItem); 
     };
     if(resultsJSON[i].value == "Individual" && resultsJSON[i].name == "isPerishable" && resultsJSON[i].value == "isPerishable"|| resultsJSON[i].name == "needRefrigerator" & resultsJSON[i].value == "Yes") {       
@@ -266,7 +273,6 @@ $btn.click(function() {
 
 });
 
-     $formContainer.append($btn);
 
     
 
