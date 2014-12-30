@@ -141,7 +141,8 @@ var questionsList = new QuestionLib(formQuestions);
 
 //THE VIEW
 
-$questions = $('#questions');
+var $questions = $('#questions');
+var $formContainer = $('#formContainer');
 
 
 function displayQuestions(questionsList, onPage){ 
@@ -261,11 +262,10 @@ $btn.click(function() {
    
   $resultsDisplay.append($resultsQuestionItem);
   $answersContainer.append($resultsDisplay);
-  $questions.css("display","none"); 
+  $formContainer.css("display","none"); 
 
 });
 
-var $formContainer = $('#formContainer');
      $formContainer.append($btn);
 
     
