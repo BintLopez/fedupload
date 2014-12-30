@@ -35,11 +35,10 @@ header{
 	@include clearfix;
 }
 
-form {
+#formContainer {
 	border: solid 1px $formOutline;
 	margin-top: 0px;
 	margin-right: 0px;
-	margin-left: 20px;
 	margin-bottom: 0px;
 	padding: 20px 50px;
 	font-family: $mainFont;
@@ -51,6 +50,35 @@ form {
 	div .Aoption {
 		display: block;
 	}
+	&:after {
+		@include clearfix;
+	}
+} 
+
+.button {
+	background: $btnColor;
+	//@include gradient($color1: $btnColor, $color2: $lightTeal);
+	position: relative;
+	width: 200px;
+	height: 60px;
+	border-radius: 10px;
+	cursor: pointer;
+	float: right;
+	bottom: 0px;
+	right: 0px;
+	margin: 30px;
+	p {
+		text-align: center;
+        //@include icomoon($icon: "heart4", $position: "before", $replace: true, $color: blue);
+	}
+}
+
+
+
+
+
+
+
 	//START CUSTOM RADIO BUTTONS
 		//makes the default radio & checkboxes invisible - NL 11/2
 	// input {
@@ -86,27 +114,8 @@ form {
 	// 	background: red;
 	// }
 	//END CUSTOM RADIO BUTTONS
-	&:after {
-		@include clearfix;
-	}
-} 
 
-.button {
-	background: $btnColor;
-	//@include gradient($color1: $btnColor, $color2: $lightTeal);
-	position: absolute;
-	width: 200px;
-	height: 60px;
-	border-radius: 10px;
-	cursor: pointer;
-	float: right;
-	bottom: 20px;
-	right: 20px;
-	p {
-		text-align: center;
-        //@include icomoon($icon: "heart4", $position: "before", $replace: true, $color: blue);
-	}
-}
+
 
 //RADIO AND CHECKBOX CUSTOM STYLES
 

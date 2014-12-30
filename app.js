@@ -180,47 +180,6 @@ function displayQuestions(questionsList, onPage){
 displayQuestions(questionsList, "startPage");
 
 
-//================DO WE STILL NEED THE BELOW CODE?==============
-// This is just to show the basic version of how I collected the results from the radio and checkboxes  
-// I changed the name so that the radio buttons would be exclusive -- NL  
-// $("input:radio[name='Individual']").click(function() {
-//     var value = $(this).val();
-//     console.log(value);
-// });
-//================end===========================================
-
-
-
-// Below:  This can probably be refractored into a resuable function.  
-// It monitors for a change in the .Food answer and checks if it is checked.  If checked the isFood questions display.  If not (!) checked, it removes the isFood questions.  
-
-
-
-//==========================WORK IN PROGRESS=========
-
-// $('.radioButton').click(function() {
-//   console.log('test');
-// });
-
-
-
-// //TRYING TO ADD CLASS TO BLANK BUTTON IF CHECKED
-// //NOT WORKING -- NL 11/2
-// $('.radioButton').change(function() {
-//     if (this.checked){
-//     console.log("hi");
-//       //displayQuestions(questionsList, "isFood");
-// } else if (!this.checked){
-//   console.log("bye");
-//   //$('.isFood').remove();
-// }
-// }); 
-
-
-//===================================================
-
-
-
 function showQuestions(thing){
   $('.' + thing).change(function() {
     if (this.checked){
@@ -244,7 +203,7 @@ $btn.addClass('button');
 var $btnText = $("<p>Next</p>");
 $btn.append($btnText);
 
-$answersContainer = $('#answersContainer');
+var $answersContainer = $('#answersContainer');
 
 var possibleAnswerslist =[];
 
@@ -306,7 +265,8 @@ $btn.click(function() {
 
 });
 
-     $questions.append($btn);
+var $formContainer = $('#formContainer');
+     $formContainer.append($btn);
 
     
 
@@ -335,6 +295,47 @@ $btn.click(function() {
 // // function pageNav() {
 // //   if 
 // // }
+
+
+
+//================DO WE STILL NEED THE BELOW CODE?==============
+// This is just to show the basic version of how I collected the results from the radio and checkboxes  
+// I changed the name so that the radio buttons would be exclusive -- NL  
+// $("input:radio[name='Individual']").click(function() {
+//     var value = $(this).val();
+//     console.log(value);
+// });
+//================end===========================================
+
+
+
+// Below:  This can probably be refractored into a resuable function.  
+// It monitors for a change in the .Food answer and checks if it is checked.  If checked the isFood questions display.  If not (!) checked, it removes the isFood questions.  
+
+
+
+//==========================WORK IN PROGRESS=========
+
+// $('.radioButton').click(function() {
+//   console.log('test');
+// });
+
+
+
+// //TRYING TO ADD CLASS TO BLANK BUTTON IF CHECKED
+// //NOT WORKING -- NL 11/2
+// $('.radioButton').change(function() {
+//     if (this.checked){
+//     console.log("hi");
+//       //displayQuestions(questionsList, "isFood");
+// } else if (!this.checked){
+//   console.log("bye");
+//   //$('.isFood').remove();
+// }
+// }); 
+
+
+//===================================================
 
 
  

@@ -210,11 +210,10 @@ header {
     font-weight: normal;
     line-height: 30%; }
 
-form {
+#formContainer {
   border: solid 1px #6d929b;
   margin-top: 0px;
   margin-right: 0px;
-  margin-left: 20px;
   margin-bottom: 0px;
   padding: 20px 50px;
   font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
@@ -223,23 +222,24 @@ form {
   background: #c1dad6;
   border-radius: 5px;
   position: relative; }
-  form div .Aoption {
+  #formContainer div .Aoption {
     display: block; }
-  form:after {
+  #formContainer:after {
     content: "";
     display: table;
     clear: both; }
 
 .button {
   background: #6d929b;
-  position: absolute;
+  position: relative;
   width: 200px;
   height: 60px;
   border-radius: 10px;
   cursor: pointer;
   float: right;
-  bottom: 20px;
-  right: 20px; }
+  bottom: 0px;
+  right: 0px;
+  margin: 30px; }
   .button p {
     text-align: center; }
 
