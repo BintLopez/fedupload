@@ -205,10 +205,11 @@ header {
   clear: both; }
   header h1 {
     font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
-    font-size: 27px;
+    font-size: 30px;
     margin-left: 20px;
     font-weight: normal;
-    line-height: 30%; }
+    line-height: 60px;
+    vertical-align: middle; }
 
 #formContainer {
   border: solid 1px #6d929b;
@@ -239,7 +240,7 @@ header {
   float: right;
   bottom: 0px;
   right: 0px;
-  margin: 30px; }
+  margin: 20px 0; }
   .button p {
     text-align: center; }
 

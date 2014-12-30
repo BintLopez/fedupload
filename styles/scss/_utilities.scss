@@ -2,6 +2,11 @@
 
 
 $mainFont: "Georgia","Times New Roman",Helvetica,Arial,sans-serif;
+$h1FontSize: 30px;
+$h1VCenter: $h1FontSize * 2;
+
+
+$maxWidth: 70%;
 
 //color library
 $seaGreen: rgba(51, 255, 102, .5);
@@ -18,14 +23,6 @@ $headerBackground: #E8D0A9;
 $headerBorder: #FF9933;
 
 
-
-
-$maxWidth: 70%;
-
-$headerHeight: 30%;
-$h1bottomAlign: $headerHeight*1.5;
-$h1topAlign: -10%;
-$h1Vcenter: $headerHeight;
 
 
 //MIXINS

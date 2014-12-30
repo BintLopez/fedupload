@@ -21,15 +21,11 @@ header{
 	border-radius: 5px;
 	h1 {
 		font-family: $mainFont;
-		font-size: 27px; 
+		font-size: $h1FontSize; 
 		margin-left: 20px;
 		font-weight: normal;
-		//margin: 10px 20px;
-		//padding: 20px 20px;
-		//text-align: center;
-		line-height: $h1Vcenter;
-		//vertical-align: middle; 
-		//background: $test;
+		line-height: $h1VCenter;
+		vertical-align: middle; 
 	}
 	margin-bottom: 15px;
 	@include clearfix;
@@ -66,7 +62,7 @@ header{
 	float: right;
 	bottom: 0px;
 	right: 0px;
-	margin: 30px;
+	margin: 20px 0;
 	p {
 		text-align: center;
         //@include icomoon($icon: "heart4", $position: "before", $replace: true, $color: blue);
