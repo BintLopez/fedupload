@@ -216,7 +216,7 @@ function answersList(questionsList){
   var answers = questionsList.items[i].possibleAnswers
       for (x in answers){
         var t = answers[x];
-        if (t.indexOf("Yes") == -1 && t.indexOf("No") == -1 && t.indexOf("Other") == -1) {
+        if (t.indexOf("Yes") === -1 && t.indexOf("No") === -1 && t.indexOf("Other") === -1) {
             possibleAnswerslist.push(t);
       };
     }
