@@ -180,7 +180,7 @@ function displayQuestions(questionsList, onPage){
 
 displayQuestions(questionsList, "startPage");
 
-
+// The function below checks for whether there is a change in the checkboxes for listQuestiontopics and either displays the questions connected to the topics or removes them from the page. 
 function showQuestions(thing){
   $('.' + thing).change(function() {
     if (this.checked){
@@ -211,6 +211,7 @@ var $answersContainer = $('#answersContainer');
 
 var possibleAnswerslist =[];
 
+// This function removes the Yes, No, & Other responses from the list  of possible donations to display on the results page as items offered to donate. 
 function answersList(questionsList){ 
   for (var i = 0; i < questionsList.items.length; i++) {
   var answers = questionsList.items[i].possibleAnswers
