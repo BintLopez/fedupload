@@ -3,7 +3,7 @@
 var formQuestions = [
   {
     "question": "Are you an... ?",
-    "possibleAnswers": ["Individual", "Restaurant", "Grocer", "Other"],
+    "possibleAnswers": ["Individual", "Restaurant/Grocer", "Other Organization"],
     "inputType": "radio",
     "name": "donorType",
     "onPage": "startPage",
@@ -254,7 +254,7 @@ $btn.click(function() {
     }
   }
 
-  $resultsDisplay.append('<div>' + 'Donating...' + '</div>'); 
+  $resultsDisplay.append('<div>' + 'You are donating...' + '</div>'); 
     // var $donationList = $('<ul>'); 
     // $resultsDisplay.append($donationList);
 
