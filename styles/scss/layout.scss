@@ -70,6 +70,7 @@ header{
 	margin: 20px 0;
 	p {
 		text-align: center;
+		line-height: 35px;
         //@include icomoon($icon: "heart4", $position: "before", $replace: true, $color: blue);
 	}
 }

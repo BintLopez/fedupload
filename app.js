@@ -252,26 +252,6 @@ $btn.click(function() {
     var $resultsDisplay = $('<div>');
     $resultsDisplay.append($resultsMessage);
    
-    //MIGRATING THE BELOW TO A SEPARATE FUNCTION - findErrors   
-    // for (var i = 0; i < resultsJSON.length; i++) { 
-    //   // displays the donorType on the page
-    //   if(resultsJSON[i].name  == "donorType"){
-    //   // Displays the type of person selected by the user
-    //     if(resultsJSON[0].value === 'Individual') {
-    //       var $resultsAnswerItem = ('<p>' + "You're giving as an "+ resultsJSON[0].value + '.' + '</p>');
-    //     }
-    //     else {
-    //       var $resultsAnswerItem = ('<p>' + "You're giving as a "+ resultsJSON[0].value + '.' + '</p>');
-    //       }
-    //     $resultsDisplay.append($resultsAnswerItem); 
-    //   };
-    //   if(resultsJSON[0].value === "Individual" && resultsJSON[i].name === "isPerishable" && resultsJSON[i].value === "Yes" || resultsJSON[0].value === "Individual" && resultsJSON[i].name === "needRefrigerator" & resultsJSON[i].value === "Yes") {       
-    //     var $exceptionMessage = $('<p>Due to food safety regulations, the pantry cannot accept perishable items or food needing refrigeration from individuals.</p>');
-    //     $exceptionMessage.addClass('errorDisplay');
-    //     $resultsDisplay.append($exceptionMessage); 
-    //   }
-    // }
-
 
     $resultsDisplay.append('<div>' + 'You are donating...' + '</div>');  
     $resultsDisplay.append("<ul id='donationList'></ul>");

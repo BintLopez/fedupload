@@ -249,7 +249,8 @@ header {
   right: 0px;
   margin: 20px 0; }
   .button p {
-    text-align: center; }
+    text-align: center;
+    line-height: 35px; }
 
 #answersContainer div, #answersContainer div li, #answersContainer div p {
   color: #632f81;
