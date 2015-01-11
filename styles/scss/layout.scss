@@ -49,7 +49,7 @@ header{
 		display: block;
 		line-height: 18px;
 		margin-left: $standardIndent;
-		margin-bottom: 14px!important;
+		margin-bottom: 14px !important;
 	}
 	&:after {
 		@include clearfix;
@@ -75,7 +75,7 @@ header{
 }
 
 
-// Nicole: This styling for the #ansersContainer needs to be refractored
+// Nicole: This styling for the #answersContainer needs to be refractored
 #answersContainer {
 	div{
 		color: $accentFontcolor;
