@@ -3,11 +3,7 @@
 var formQuestions = [
   {
     "question": "Are you an... ?",
-<<<<<<< HEAD
-    "possibleAnswers": ["Individual", "Restaurant or Grocer", "Other Organization"],
-=======
     "possibleAnswers": ["Individual", "Restaurant/Grocer", "Other Organization"],
->>>>>>> ffcb5a9b960e3418d11cf106edfd2569d082c1d7
     "inputType": "radio",
     "name": "donorType",
     "onPage": "startPage",
