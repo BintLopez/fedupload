@@ -191,7 +191,8 @@
 
 body {
   max-width: 70%;
-  margin: 30px auto; }
+  margin: 30px auto;
+  color: #181818; }
 
 header {
   background: #e8d0a9;
@@ -205,10 +206,10 @@ header {
   clear: both; }
   header h1 {
     font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
-    font-size: 30px;
+    font-size: 1.7em;
     margin-left: 20px;
     font-weight: normal;
-    line-height: 60px;
+    line-height: 3.4em;
     vertical-align: middle; }
 
 #formContainer {
@@ -218,13 +219,16 @@ header {
   margin-bottom: 0px;
   padding: 20px 50px;
   font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
-  font-size: 1.3em;
-  line-height: 18px;
+  font-size: 0.8em;
+  line-height: 20px;
   background: #c1dad6;
   border-radius: 5px;
   position: relative; }
-  #formContainer div .Aoption {
-    display: block; }
+  #formContainer div .Aoption, #answersContainer div #formContainer li .Aoption, #answersContainer div #formContainer p .Aoption {
+    display: block;
+    line-height: 18px;
+    margin-left: 20px;
+    margin-bottom: 14px !important; }
   #formContainer:after {
     content: "";
     display: table;
@@ -232,6 +236,9 @@ header {
 
 .button {
   background: #6d929b;
+  background-image: -webkit-linear-gradient(#6d929b, #c1dad6, #6d929b);
+  background-image: -moz-linear-gradient(#6d929b, #c1dad6, #6d929b);
+  background-image: linear-gradient(#6d929b, #c1dad6, #6d929b);
   position: relative;
   width: 200px;
   height: 60px;
@@ -244,7 +251,30 @@ header {
   .button p {
     text-align: center; }
 
-.errorDisplay {
-  border: 1px red dashed; }
+#answersContainer div, #answersContainer div li, #answersContainer div p {
+  color: #632f81;
+  font-size: 20px;
+  line-height: 28px;
+  display: block;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 15px; }
+  #answersContainer div div, #answersContainer div li, #answersContainer div p {
+    color: #181818;
+    font-size: 0.8em;
+    line-height: 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px; }
+  #answersContainer div li, #answersContainer div p {
+    margin-left: 40px;
+    padding-top: 0;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+    display: list-item;
+    list-style: disc; }
+  #answersContainer div p {
+    list-style: none;
+    margin-left: 0px; }
 
 /* Hiding default checkbox and Radio button design */

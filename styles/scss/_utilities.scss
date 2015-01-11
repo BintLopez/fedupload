@@ -2,8 +2,10 @@
 
 
 $mainFont: "Georgia","Times New Roman",Helvetica,Arial,sans-serif;
-$h1FontSize: 30px;
+$h1FontSize: 1.7em;
 $h1VCenter: $h1FontSize * 2;
+$fontColor: #181818;
+$accentFontcolor: rgb(99, 47, 129);
 
 
 $maxWidth: 70%;
@@ -21,6 +23,9 @@ $formOutline: $darkTeal;
 $btnColor: $darkTeal;
 $headerBackground: #E8D0A9;
 $headerBorder: #FF9933;
+
+// Standard margins and padding
+$standardIndent: 20px;
 
 
 
