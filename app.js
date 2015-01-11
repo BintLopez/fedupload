@@ -3,7 +3,11 @@
 var formQuestions = [
   {
     "question": "Are you an... ?",
+<<<<<<< HEAD
     "possibleAnswers": ["Individual", "Restaurant or Grocer", "Other Organization"],
+=======
+    "possibleAnswers": ["Individual", "Restaurant/Grocer", "Other Organization"],
+>>>>>>> ffcb5a9b960e3418d11cf106edfd2569d082c1d7
     "inputType": "radio",
     "name": "donorType",
     "onPage": "startPage",
@@ -255,10 +259,11 @@ $btn.click(function() {
     }
   }
 
-  $resultsDisplay.append('<div>' + 'Donating...' + '</div>'); 
+
+  $resultsDisplay.append('<div>' + 'You are donating...' + '</div>');  
   $resultsDisplay.append("<ul id='donationList'></ul>");
   var $displayList = [];
-    // $resultsDisplay.append($donationList);
+
 
   for (var i = 0; i < resultsJSON.length; i++) { 
     var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
