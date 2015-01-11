@@ -53,7 +53,7 @@ var formQuestions = [
     "question": "What would you like to donate?",
     "inputType": "text",
     "name": "otherDonate",
-    "onPage": "isOther",
+    "onPage": "isExtra",
   },
   {
     "question": "What is your name?",
@@ -255,24 +255,25 @@ $btn.click(function() {
     }
   }
 
-  $resultsDisplay.append('<div>' + 'You are donating...' + '</div>'); 
-    // var $donationList = $('<ul>'); 
-    // $resultsDisplay.append($donationList);
+
+  $resultsDisplay.append('<div>' + 'You are donating...' + '</div>');  
+  $resultsDisplay.append("<ul id='donationList'></ul>");
+  var $displayList = [];
+
 
   for (var i = 0; i < resultsJSON.length; i++) { 
     var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
-    console.log(a); 
     if(a > 4){        
-      var $resultsQuestionItem = ('<p>' + resultsJSON[i].name + '</p>');
-      console.log($resultsQuestionItem);
-      $resultsDisplay.append($resultsQuestionItem);
+      var $resultsQuestionItem = ('<li>' + resultsJSON[i].name + '</li>');
+      $displayList.push($resultsQuestionItem);
     }
   }
   
   // var $resultsAnswerItem = resultsJSON[i].value;
    
-  $resultsDisplay.append($resultsQuestionItem);
+  // $resultsDisplay.append("<ul id='donationList'></ul>");
   $answersContainer.append($resultsDisplay);
+  $("#donationList").append($displayList);
   $formContainer.css("display","none"); 
 
 });

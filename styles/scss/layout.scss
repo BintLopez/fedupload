@@ -11,6 +11,7 @@
 body {
 	max-width: $maxWidth;
 	margin: 30px auto;
+	color: $fontColor;
 }
 
 header{
@@ -22,7 +23,7 @@ header{
 	h1 {
 		font-family: $mainFont;
 		font-size: $h1FontSize; 
-		margin-left: 20px;
+		margin-left: $standardIndent;
 		font-weight: normal;
 		line-height: $h1VCenter;
 		vertical-align: middle; 
@@ -38,13 +39,17 @@ header{
 	margin-bottom: 0px;
 	padding: 20px 50px;
 	font-family: $mainFont;
-	font-size: 1.3em;
-	line-height: 18px;
+	// Copied font size and converted px to em
+	font-size: 0.8em;
+	line-height: 20px;
 	background: $formBackground;
 	border-radius: 5px;
 	position: relative;
 	div .Aoption {
 		display: block;
+		line-height: 18px;
+		margin-left: $standardIndent;
+		margin-bottom: 14px!important;
 	}
 	&:after {
 		@include clearfix;
@@ -53,7 +58,7 @@ header{
 
 .button {
 	background: $btnColor;
-	//@include gradient($color1: $btnColor, $color2: $lightTeal);
+	@include gradient($color1: $btnColor, $color2: $lightTeal);
 	position: relative;
 	width: 200px;
 	height: 60px;
@@ -69,9 +74,49 @@ header{
 	}
 }
 
-.errorDisplay {
-	border: 1px red dashed;
+
+// Nicole: This styling for the #ansersContainer needs to be refractored
+#answersContainer {
+	div{
+		color: $accentFontcolor;
+		font-size: 20px;
+		line-height: 28px;
+		display: block;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		margin-bottom: 15px;
+
+		div{
+			color:$fontColor;
+			font-size: 0.8em;
+			line-height: $standardIndent;
+			border-radius: 5px;
+			margin-left: $standardIndent;
+			margin-bottom: $standardIndent;
+		}
+		li {
+			@extend div;
+			margin-left: 40px;
+			padding-top: 0;
+			padding-bottom: 5px;
+			margin-bottom: 0px;
+			display: list-item;
+			list-style: disc;
+		}
+		p {
+			@extend li;
+			list-style: none;
+			margin-left: 0px;
+
+		}
+		}
+
 }
+
+// We are moving the error message into the questions page
+// .errorDisplay {
+// 	border: 1px red dashed;
+// }
 
 
 
