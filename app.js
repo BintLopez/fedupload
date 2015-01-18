@@ -72,6 +72,12 @@ var formQuestions = [
     "inputType": "text",
     "name": "phoneNumber",
     "onPage": "formEnd",
+  },
+  {
+    "question": "Is your donation over 100lbs?",
+    "inputType": "radio",
+    "name": "isPickup",
+    "onPage": "formEnd"
   }
 ];
 
