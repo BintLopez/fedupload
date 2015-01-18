@@ -244,12 +244,6 @@ function listTextquestions(questionsList){
 listTextquestions(questionsList);
 
 
-//for loop to iterate through questions w/ text and if checked grab the value of item.name
-for (i in textQuestions) {
-  //console.log(textQuestions[i].value);
-}
-
-
 //BUTTON TO SUBMIT FORM
 $btn.click(function() {
 
