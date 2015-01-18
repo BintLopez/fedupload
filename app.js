@@ -278,6 +278,3 @@ $btn.click(function() {
   }
 
 });
-
-
-
