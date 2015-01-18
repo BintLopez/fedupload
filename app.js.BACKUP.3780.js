@@ -125,6 +125,11 @@ function Question(config) {
     this.onPage = config.onPage || " ";
 };
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 73458ded85761aa236de5a00bc15499911340b4a
 //FUNCTION THAT INSTANTIATES AN OBJECT
 
 function QuestionLib(formQuestions) {
@@ -161,10 +166,21 @@ function displayQuestions(questionsList, onPage){
         if (questionsList.items[i].inputType === "radio" || questionsList.items[i].inputType === "text") {
           // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
-        } else {
+<<<<<<< HEAD
+        
+            //Added radioButton class to radio answers to help w/ custom radios and checkboxes -- NL 11/02
+          $Aoption.addClass("radioButton");   
+        } else if {questionsList.items[i].inputType === "checkbox"){
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ answers[x]+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
+          //Added checkboxButton class to help w/ custom stylings of checkboxes
+          $Aoption.addClass("checkboxButton"); 
+        }else
+=======
         }
-
+        else {
+          var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ answers[x]+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
+>>>>>>> 73458ded85761aa236de5a00bc15499911340b4a
+        }
         $Adisplay.append($Aoption);
         $container.append($Adisplay);
       }
@@ -260,6 +276,10 @@ $btn.click(function() {
     var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
 
     var resultsJSON = $questions.serializeArray();
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 73458ded85761aa236de5a00bc15499911340b4a
 
     answersList(questionsList);
     var $resultsDisplay = $('<div>');
@@ -270,6 +290,25 @@ $btn.click(function() {
     $resultsDisplay.append("<ul id='donationList'></ul>");
     var $displayList = [];
 
+<<<<<<< HEAD
+// This is my attempt to grab the text answers
+console.log(resultsJSON); 
+
+function pullTextAnswers(resultsJSON){
+  for (var i = 0; i < resultsJSON.length; i++){
+    if(resultsJSON.items[i].value = "on"){
+      console.log("Yes");
+    } else{
+      console.log("No");
+    }
+  }
+};
+
+pullTextAnswers(resultsJSON);
+
+
+=======
+>>>>>>> 73458ded85761aa236de5a00bc15499911340b4a
   for (var i = 0; i < resultsJSON.length; i++) { 
       var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
       if(a > 4){        
@@ -282,8 +321,12 @@ $btn.click(function() {
     $("#donationList").append($displayList);
     $formContainer.css("display","none"); 
   }
+<<<<<<< HEAD
 
 });
 
 
-
+    
+=======
+});
+>>>>>>> 73458ded85761aa236de5a00bc15499911340b4a

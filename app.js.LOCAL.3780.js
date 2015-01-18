@@ -125,6 +125,8 @@ function Question(config) {
     this.onPage = config.onPage || " ";
 };
 
+
+
 //FUNCTION THAT INSTANTIATES AN OBJECT
 
 function QuestionLib(formQuestions) {
@@ -158,13 +160,18 @@ function displayQuestions(questionsList, onPage){
       for (x in answers) {
         var $Adisplay = $('<div>');
         $Adisplay.addClass('Aoption');
-        if (questionsList.items[i].inputType === "radio" || questionsList.items[i].inputType === "text") {
+        if (questionsList.items[i].inputType === "radio") {
           // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
-        } else {
+        
+            //Added radioButton class to radio answers to help w/ custom radios and checkboxes -- NL 11/02
+          $Aoption.addClass("radioButton");   
+        } else if {questionsList.items[i].inputType === "checkbox"){
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ answers[x]+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
+          //Added checkboxButton class to help w/ custom stylings of checkboxes
+          $Aoption.addClass("checkboxButton"); 
+        }else
         }
-
         $Adisplay.append($Aoption);
         $container.append($Adisplay);
       }
@@ -236,18 +243,12 @@ var textQuestions = [];
 function listTextquestions(questionsList){
     for (var i = 0; i < questionsList.items.length; i++) {
       if (questionsList.items[i].inputType === "text"){
-        textQuestions.push(questionsList.items[i]);
+        textQuestions.push(questionsList.items[i].name);
       };
     };
 };
 
 listTextquestions(questionsList);
-
-
-//for loop to iterate through questions w/ text and if checked grab the value of item.name
-for (i in textQuestions) {
-  //console.log(textQuestions[i].value);
-}
 
 
 //BUTTON TO SUBMIT FORM
@@ -260,6 +261,7 @@ $btn.click(function() {
     var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
 
     var resultsJSON = $questions.serializeArray();
+    
 
     answersList(questionsList);
     var $resultsDisplay = $('<div>');
@@ -269,6 +271,22 @@ $btn.click(function() {
     $resultsDisplay.append('<div>' + 'You are donating...' + '</div>');  
     $resultsDisplay.append("<ul id='donationList'></ul>");
     var $displayList = [];
+
+// This is my attempt to grab the text answers
+console.log(resultsJSON); 
+
+function pullTextAnswers(resultsJSON){
+  for (var i = 0; i < resultsJSON.length; i++){
+    if(resultsJSON.items[i].value = "on"){
+      console.log("Yes");
+    } else{
+      console.log("No");
+    }
+  }
+};
+
+pullTextAnswers(resultsJSON);
+
 
   for (var i = 0; i < resultsJSON.length; i++) { 
       var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
@@ -286,4 +304,4 @@ $btn.click(function() {
 });
 
 
-
+    

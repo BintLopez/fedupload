@@ -134,12 +134,12 @@ function QuestionLib(formQuestions) {
   }
 };
 
-// Calls the function QuestionLib and adds the results of the function to var questionList
 var questionsList = new QuestionLib(formQuestions);
+//console.log(questionsList.items.length);
 
 
 
-//THE VIEW - pulls the DOM class objects (questions and formContainer) into variables for use in the js file
+//THE VIEW
 
 var $questions = $('#questions');
 var $formContainer = $('#formContainer');
@@ -161,10 +161,10 @@ function displayQuestions(questionsList, onPage){
         if (questionsList.items[i].inputType === "radio" || questionsList.items[i].inputType === "text") {
           // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
-        } else {
+        }
+        else {
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ answers[x]+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
         }
-
         $Adisplay.append($Aoption);
         $container.append($Adisplay);
       }
@@ -243,6 +243,7 @@ function listTextquestions(questionsList){
 
 listTextquestions(questionsList);
 
+console.log(textQuestions);
 
 //for loop to iterate through questions w/ text and if checked grab the value of item.name
 for (i in textQuestions) {
@@ -256,7 +257,8 @@ $btn.click(function() {
   if (findErrors()) {
     var $exceptionMessage = 'Due to food safety regulations, the pantry cannot accept perishable items or food needing refrigeration from individuals.';
     alert($exceptionMessage);
-  } else {
+  }
+  else {
     var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
 
     var resultsJSON = $questions.serializeArray();
@@ -282,8 +284,4 @@ $btn.click(function() {
     $("#donationList").append($displayList);
     $formContainer.css("display","none"); 
   }
-
 });
-
-
-
