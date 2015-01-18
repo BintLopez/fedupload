@@ -125,12 +125,6 @@ function Question(config) {
     this.onPage = config.onPage || " ";
 };
 
-//QUESTION OBJECT METHODS
-// Question.prototype.displayForm = function() {
-//   //console.log(this.question);
-// }
-
-
 //FUNCTION THAT INSTANTIATES AN OBJECT
 
 function QuestionLib(formQuestions) {
