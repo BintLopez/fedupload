@@ -209,6 +209,7 @@ for( i in listQuestiontopics){
   showQuestions(listQuestiontopics[i]);
 };
 
+
 //NEXT BUTTON VIEW
 var $btn = $("<div>");
 $btn.addClass('button');
@@ -234,6 +235,20 @@ function answersList(questionsList){
     }
 }};
 
+// Creates a list of questions which have text fields
+var textQuestions = [];
+
+function listTextquestions(questionsList){
+    for (var i = 0; i < questionsList.items.length; i++) {
+      if (questionsList.items[i].inputType === "text"){
+        textQuestions.push(questionsList.items[i].name);
+      };
+    };
+};
+
+listTextquestions(questionsList);
+
+console.log(textQuestions);
 
 //BUTTON TO SUBMIT FORM
 $btn.click(function() {
@@ -252,23 +267,25 @@ $btn.click(function() {
     var $resultsDisplay = $('<div>');
     $resultsDisplay.append($resultsMessage);
    
-
+// Sets up the display of the donation list 
     $resultsDisplay.append('<div>' + 'You are donating...' + '</div>');  
     $resultsDisplay.append("<ul id='donationList'></ul>");
     var $displayList = [];
 
+console.log(resultsJSON); 
+console.log(possibleAnswerslist);
 
-    for (var i = 0; i < resultsJSON.length; i++) { 
+  for (var i = 0; i < resultsJSON.length; i++) { 
       var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
       if(a > 4){        
         var $resultsQuestionItem = ('<li>' + resultsJSON[i].name + '</li>');
         $displayList.push($resultsQuestionItem);
       }
+      //  = "text"){
+      //   console.log('hi');
+      // }
     }
     
-    // var $resultsAnswerItem = resultsJSON[i].value;
-     
-    // $resultsDisplay.append("<ul id='donationList'></ul>");
     $answersContainer.append($resultsDisplay);
     $("#donationList").append($displayList);
     $formContainer.css("display","none"); 
