@@ -125,10 +125,6 @@ function Question(config) {
     this.onPage = config.onPage || " ";
 };
 
-//QUESTION OBJECT METHODS
-// Question.prototype.displayForm = function() {
-//   //console.log(this.question);
-// }
 
 
 //FUNCTION THAT INSTANTIATES AN OBJECT
@@ -140,12 +136,12 @@ function QuestionLib(formQuestions) {
   }
 };
 
+// Calls the function QuestionLib and adds the results of the function to var questionList
 var questionsList = new QuestionLib(formQuestions);
-//console.log(questionsList.items.length);
 
 
 
-//THE VIEW
+//THE VIEW - pulls the DOM class objects (questions and formContainer) into variables for use in the js file
 
 var $questions = $('#questions');
 var $formContainer = $('#formContainer');
@@ -167,14 +163,14 @@ function displayQuestions(questionsList, onPage){
         if (questionsList.items[i].inputType === "radio") {
           // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
-            //console.log($Aoption);
+        
             //Added radioButton class to radio answers to help w/ custom radios and checkboxes -- NL 11/02
           $Aoption.addClass("radioButton");   
-        }
-        else {
+        } else if {questionsList.items[i].inputType === "checkbox"){
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ answers[x]+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
           //Added checkboxButton class to help w/ custom stylings of checkboxes
           $Aoption.addClass("checkboxButton"); 
+        }else
         }
         $Adisplay.append($Aoption);
         $container.append($Adisplay);
@@ -254,7 +250,6 @@ function listTextquestions(questionsList){
 
 listTextquestions(questionsList);
 
-console.log(textQuestions);
 
 //BUTTON TO SUBMIT FORM
 $btn.click(function() {
@@ -262,12 +257,11 @@ $btn.click(function() {
   if (findErrors()) {
     var $exceptionMessage = 'Due to food safety regulations, the pantry cannot accept perishable items or food needing refrigeration from individuals.';
     alert($exceptionMessage);
-  }
-  else {
+  } else {
     var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
 
     var resultsJSON = $questions.serializeArray();
-    //console.log(resultsJSON);
+    
 
     answersList(questionsList);
     var $resultsDisplay = $('<div>');
@@ -278,19 +272,28 @@ $btn.click(function() {
     $resultsDisplay.append("<ul id='donationList'></ul>");
     var $displayList = [];
 
+// This is my attempt to grab the text answers
 console.log(resultsJSON); 
-console.log(possibleAnswerslist);
+
+function pullTextAnswers(resultsJSON){
+  for (var i = 0; i < resultsJSON.length; i++){
+    if(resultsJSON.items[i].value = "on"){
+      console.log("Yes");
+    } else{
+      console.log("No");
+    }
+  }
+};
+
+pullTextAnswers(resultsJSON);
+
 
   for (var i = 0; i < resultsJSON.length; i++) { 
       var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
-      console.log(a);
       if(a > 4){        
         var $resultsQuestionItem = ('<li>' + resultsJSON[i].name + '</li>');
         $displayList.push($resultsQuestionItem);
       }
-      //  = "text"){
-      //   console.log('hi');
-      // }
     }
     
     $answersContainer.append($resultsDisplay);
@@ -302,102 +305,3 @@ console.log(possibleAnswerslist);
 
 
     
-
-// Precious button click function
-// $btn.click(function() {
-//   var resultsJSON = $questions.serializeArray();
-//   console.log(resultsJSON);
-
-//   // Below still needs work but we are wizards so it will happen <:) is our wizard emoticon
-//   for (var i = 0; i < resultsJSON.length; i++) {
-//     console.log("wizards");
-//     var $resultsQuestionItem = resultsJSON[i].name;
-//     var $resultsAnswerItem = resultsJSON[i].value;
-//     var $resultsDisplay = $('<div>');
-//     $resultsDisplay.append($resultsQuestionItem);
-//     $resultsDisplay.append($resultsAnswerItem);
-//     $questions.css("display","none");
-//     $answersContainer.append($resultsDisplay);
-//   }
-// });
-// // $btn.css("width", "200px");
-// // $btn.css("height", "200px");
-// // $btn.css("background", "red");
-// $questions.append($btn);
-
-// // function pageNav() {
-// //   if 
-// // }
-
-
-
-//================DO WE STILL NEED THE BELOW CODE?==============
-// This is just to show the basic version of how I collected the results from the radio and checkboxes  
-// I changed the name so that the radio buttons would be exclusive -- NL  
-// $("input:radio[name='Individual']").click(function() {
-//     var value = $(this).val();
-//     console.log(value);
-// });
-//================end===========================================
-
-
-
-// Below:  This can probably be refractored into a resuable function.  
-// It monitors for a change in the .Food answer and checks if it is checked.  If checked the isFood questions display.  If not (!) checked, it removes the isFood questions.  
-
-
-
-//==========================WORK IN PROGRESS=========
-
-// $('.radioButton').click(function() {
-//   console.log('test');
-// });
-
-
-
-// //TRYING TO ADD CLASS TO BLANK BUTTON IF CHECKED
-// //NOT WORKING -- NL 11/2
-// $('.radioButton').change(function() {
-//     if (this.checked){
-//     console.log("hi");
-//       //displayQuestions(questionsList, "isFood");
-// } else if (!this.checked){
-//   console.log("bye");
-//   //$('.isFood').remove();
-// }
-// }); 
-
-
-//===================================================
-
-
- 
-  
-
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
