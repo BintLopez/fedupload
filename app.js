@@ -38,7 +38,7 @@ var formQuestions = [
   },
   {
     "question": "What type of clothing?",
-    "possibleAnswers": ["Women's", "Men's", "Children's", "Shoes", "Business Attire", "Winter Clothing", "Summer Clothing"],
+    "possibleAnswers": ["Women's Clothing", "Men's Clothing", "Children's Clothing", "Accessories", "Shoes", "Business Attire", "Winter Items"],
     "inputType": "checkbox",
     "name": "typeClothing",
     "onPage": "isClothing",
@@ -53,7 +53,7 @@ var formQuestions = [
     "question": "What would you like to donate?",
     "inputType": "text",
     "name": "otherDonate",
-    "onPage": "isExtra",
+    "onPage": "isOther",
   },
   {
     "question": "What is your name?",
@@ -72,6 +72,12 @@ var formQuestions = [
     "inputType": "text",
     "name": "phoneNumber",
     "onPage": "formEnd",
+  },
+  {
+    "question": "Is your donation over 100lbs?",
+    "inputType": "radio",
+    "name": "isPickup",
+    "onPage": "formEnd"
   }
 ];
 
@@ -120,9 +126,9 @@ function Question(config) {
 };
 
 //QUESTION OBJECT METHODS
-Question.prototype.displayForm = function() {
-  console.log(this.question);
-}
+// Question.prototype.displayForm = function() {
+//   //console.log(this.question);
+// }
 
 
 //FUNCTION THAT INSTANTIATES AN OBJECT
@@ -261,7 +267,7 @@ $btn.click(function() {
     var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
 
     var resultsJSON = $questions.serializeArray();
-    console.log(resultsJSON);
+    //console.log(resultsJSON);
 
     answersList(questionsList);
     var $resultsDisplay = $('<div>');
@@ -277,6 +283,7 @@ console.log(possibleAnswerslist);
 
   for (var i = 0; i < resultsJSON.length; i++) { 
       var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
+      console.log(a);
       if(a > 4){        
         var $resultsQuestionItem = ('<li>' + resultsJSON[i].name + '</li>');
         $displayList.push($resultsQuestionItem);

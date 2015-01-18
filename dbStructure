@@ -1,0 +1,23 @@
+Structure of DB
+
+
+ONE DONATION REQUEST
+
+Donor {
+	email:
+	phoneNumber:
+	firstName:
+	lastName:
+	type: 
+}
+
+Donation {
+	type: //pickUp or dropOff
+	isPerishable:
+	needsFridge:
+	typeOfFood:
+	typeOfClothing:
+	typeOfHousehold:
+	other:
+
+}
