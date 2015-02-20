@@ -158,9 +158,12 @@ function displayQuestions(questionsList, onPage){
       for (x in answers) {
         var $Adisplay = $('<div>');
         $Adisplay.addClass('Aoption');
-        if (questionsList.items[i].inputType === "radio" || questionsList.items[i].inputType === "text") {
+        if (questionsList.items[i].inputType === "radio") {
           // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
+        } else if ( questionsList.items[i].inputType === "text") {
+          // Added a value to each radio answer to allow the serializeArray to pick up which answer the user marks.
+          var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ questionsList.items[i].name+'"' + 'value = '+ '"' + answers[x] + '"' + 'id= '+'"txt_name"'+ '/>' + '<label>' + answers[x] + '</label>');
         } else {
           var $Aoption = $('<input type= '+'"'+ questionsList.items[i].inputType +'"'+'name = ' + '"'+ answers[x]+'"' + 'class= '+'"' +answers[x]+'"'+ '/>' + '<label>' + answers[x] + '</label>');
         }
@@ -224,24 +227,12 @@ function answersList(questionsList){
   var answers = questionsList.items[i].possibleAnswers
       for (x in answers){
         var t = answers[x];
-        if (t.indexOf("Yes") === -1 && t.indexOf("No") === -1 && t.indexOf("Other") === -1) {
+        if (t.indexOf("Yes") === -1 && t.indexOf("No") === -1 && t.indexOf("Other") === -1 && t.indexOf("Household")) {
             possibleAnswerslist.push(t);
       };
     }
 }};
 
-// Creates a list of questions which have text fields
-var textQuestions = [];
-
-function listTextquestions(questionsList){
-    for (var i = 0; i < questionsList.items.length; i++) {
-      if (questionsList.items[i].inputType === "text"){
-        textQuestions.push(questionsList.items[i]);
-      };
-    };
-};
-
-listTextquestions(questionsList);
 
 
 //BUTTON TO SUBMIT FORM
@@ -253,9 +244,12 @@ $btn.click(function() {
   } else {
     var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
 
+
+
 if($('inputType'))
 
     var resultsJSON = $questions.serializeArray();
+    console.log(resultsJSON);
 
     answersList(questionsList);
     var $resultsDisplay = $('<div>');
@@ -268,19 +262,20 @@ if($('inputType'))
 
   for (var i = 0; i < resultsJSON.length; i++) { 
       var a = possibleAnswerslist.indexOf(resultsJSON[i].name);
-      if(a > 4){        
+      if( a > 4) {        
         var $resultsQuestionItem = ('<li>' + resultsJSON[i].name + '</li>');
         $displayList.push($resultsQuestionItem);
-      }
+      } else if(resultsJSON[i].name =="otherDonate" || resultsJSON[i].name =="typeofHousehold"){
+        var $resultsQuestionItem = ('<li>' + resultsJSON[i].value + '</li>');
+        $displayList.push($resultsQuestionItem);
     }
+  }
+ 
   
     $answersContainer.append($resultsDisplay);
     $("#donationList").append($displayList);
     $formContainer.css("display","none"); 
   }
 
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 36864ed23869b1a4481dbc56258a622833b5503b
+
