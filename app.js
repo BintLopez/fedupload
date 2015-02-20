@@ -31,7 +31,7 @@ var formQuestions = [
   },
   {
     "question": "What type of food do you want to donate?",
-    "possibleAnswers": ["bread", "grains", "beans"],
+    "possibleAnswers": ["bread", "grains", "beans", "pasta", "canned goods"],
     "inputType": "checkbox",
     "name": "typeOffood",
     "onPage": "isFood",
@@ -253,6 +253,8 @@ $btn.click(function() {
   } else {
     var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
 
+if($('inputType'))
+
     var resultsJSON = $questions.serializeArray();
 
     answersList(questionsList);
@@ -271,7 +273,7 @@ $btn.click(function() {
         $displayList.push($resultsQuestionItem);
       }
     }
-    
+  
     $answersContainer.append($resultsDisplay);
     $("#donationList").append($displayList);
     $formContainer.css("display","none"); 
