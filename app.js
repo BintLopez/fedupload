@@ -279,4 +279,8 @@ if($('inputType'))
     $formContainer.css("display","none"); 
   }
 
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 36864ed23869b1a4481dbc56258a622833b5503b
