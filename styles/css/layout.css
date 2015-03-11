@@ -209,6 +209,13 @@ header {
     font-weight: normal;
     line-height: 3.4em;
     vertical-align: middle; }
+  header h2 {
+    font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
+    font-size: 1.02em;
+    margin-left: 26px;
+    font-weight: normal;
+    line-height: 1.36em;
+    vertical-align: middle; }
 
 #formContainer {
   border: solid 1px #6d929b;
@@ -274,7 +281,5 @@ header {
   #answersContainer div p {
     list-style: none;
     margin-left: 0px; }
-
-/* Hiding default checkbox and Radio button design */
 
 /*# sourceMappingURL=layout.css.map */

@@ -105,16 +105,6 @@ var wishListProgram = [
 "most needed expensive non-perishable items are: tuna, oil, pb, jelly"
 ]
 
-var wishList4Clients = [
-"CTA cards",
-"Dental services",
-"Veterinary",
-"Haircuts",
-"Gift cards at stores",
-"Fans and heaters"
-]
-
-//THE MODEL
   
 function Question(config) {
     config = config || {};
@@ -242,7 +232,7 @@ $btn.click(function() {
     var $exceptionMessage = 'Due to food safety regulations, the pantry cannot accept perishable items or food needing refrigeration from individuals.';
     alert($exceptionMessage);
   } else {
-    var $resultsMessage = 'Thanks for donating to Lakeview Food Pantry! The details of your order and instructions for next steps are below.';
+    var $resultsMessage = 'Thanks for donating to the food pantry! The details of your order and instructions for next steps are below.';
 
 
 
